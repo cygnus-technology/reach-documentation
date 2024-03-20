@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>File: cr_stack.h &#8212; Cygnus Reach Embedded Stack  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File: i3_log.h" href="../i3_log/index.html" />
+    <link rel="prev" title="File: crcb_weak.h" href="../crcb_weak/index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="file-cr-stack-h">
+<h1>File: cr_stack.h<a class="headerlink" href="#file-cr-stack-h" title="Link to this heading">¶</a></h1>
+<p>This file exposes the core of the public Reach stack API. It depends on reach-server.h which defines what parts of the stack are being used by an applicaiton. crcb_weak.h is incluced. That is the part of the API that must be implemented by a server application. </p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Chuck Peplinski </p>
+</dd>
+<dt><strong>Date</strong></dt><dd><p>2024-01-24 </p>
+</dd>
+<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.MAX_NUM_PARAM_ID">
+<span class="target" id="cr__stack_8h_1a2cad5cbd47a3b5129f0d77b50531b774"></span><span class="sig-name descname"><span class="n"><span class="pre">MAX_NUM_PARAM_ID</span></span></span><a class="headerlink" href="#c.MAX_NUM_PARAM_ID" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ALIGN_TO_WORD">
+<span class="target" id="cr__stack_8h_1a3a25a0d69b8381ca15bf278ffa888471"></span><span class="sig-name descname"><span class="n"><span class="pre">ALIGN_TO_WORD</span></span></span><a class="headerlink" href="#c.ALIGN_TO_WORD" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CR_STACK_VERSION_LEN">
+<span class="target" id="cr__stack_8h_1ae3a1a348ccfffaacc04b28f9e87038a9"></span><span class="sig-name descname"><span class="n"><span class="pre">CR_STACK_VERSION_LEN</span></span></span><a class="headerlink" href="#c.CR_STACK_VERSION_LEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv47cr_initv">
+<span id="_CPPv37cr_initv"></span><span id="_CPPv27cr_initv"></span><span id="cr_init"></span><span class="target" id="cr__stack_8h_1aa30199827c6ac809190a2494b2a66a13"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_init</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47cr_initv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_init </p>
+<p>To be called before starting the stack. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR or a non-zero error like cr_ErrorCodes_. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cr_set_advertised_namePci">
+<span id="_CPPv322cr_set_advertised_namePci"></span><span id="_CPPv222cr_set_advertised_namePci"></span><span id="cr_set_advertised_name__cP.i"></span><span class="target" id="cr__stack_8h_1a16d910a820e7f9337216cd623d55e66f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_set_advertised_name</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cr_set_advertised_namePci" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_set_advertised_name </p>
+<p>Sets the name of the device that should be advertised before connecting. Used in BLE. The length of the string is set by APP_ADVERTISED_NAME_LENGTH which can be define in the application. See reach-server.h. Uses REACH_SHORT_STRING_LEN when APP_ADVERTISED_NAME_LENGTH is not defined. The code setting up the communication link can retrieve this using <a class="reference internal" href="#cr__stack_8h_1a273278fbc1240f38ffa8f6cc55daf1ac"><span class="std std-ref">cr_get_advertised_name()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR or a non-zero error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cr_get_advertised_namev">
+<span id="_CPPv322cr_get_advertised_namev"></span><span id="_CPPv222cr_get_advertised_namev"></span><span id="cr_get_advertised_name"></span><span class="target" id="cr__stack_8h_1a273278fbc1240f38ffa8f6cc55daf1ac"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_advertised_name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cr_get_advertised_namev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_advertised_name </p>
+<p>Retrieves the name stored by <a class="reference internal" href="#cr__stack_8h_1a16d910a820e7f9337216cd623d55e66f"><span class="std std-ref">cr_set_advertised_name()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pointer to a string of length REACH_SHORT_STRING_LEN. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410cr_process8uint32_t">
+<span id="_CPPv310cr_process8uint32_t"></span><span id="_CPPv210cr_process8uint32_t"></span><span id="cr_process__uint32_t"></span><span class="target" id="cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_process</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">ticks</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410cr_process8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_process </p>
+<p>The application must call <a class="reference internal" href="#cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"><span class="std std-ref">cr_process()</span></a> regularly as it does most of the work required of Reach. The ticks parameter is expected to be a monotonically increasing value representing the time since the system started. This allows it to perform timing related tasks such as notifications. <a class="reference internal" href="#cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"><span class="std std-ref">cr_process()</span></a> returns immediately if the device is not connected to BLE. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ticks</strong> – A measure of time passed, typically milliseconds, but the units are not specified. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR or a non-zero error code, however these are indicative only. The non-zero returns indicate normal conditions. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cr_store_coded_promptP7uint8_t6size_t">
+<span id="_CPPv321cr_store_coded_promptP7uint8_t6size_t"></span><span id="_CPPv221cr_store_coded_promptP7uint8_t6size_t"></span><span id="cr_store_coded_prompt__uint8_tP.s"></span><span class="target" id="cr__stack_8h_1af1732a5d9ee5f83c4360448ae4452b34"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_store_coded_prompt</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cr_store_coded_promptP7uint8_t6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_store_coded_prompt </p>
+<p>Allows the application to store the prompt where the Reach stack can see it. The byte data and length are copied into private storage. This data is retrieved using <a class="reference internal" href="../crcb_weak/index.html#crcb__weak_8h_1a97b5d59390752d905648adaae504983a"><span class="std std-ref">crcb_get_coded_prompt()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – The coded prompt to be stored. </p></li>
+<li><p><strong>len</strong> – : number of bytes to be stored. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR or a non-zero error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t">
+<span id="_CPPv328cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="_CPPv228cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="cr_get_coded_response_buffer__uint8_tPP.sP"></span><span class="target" id="cr__stack_8h_1ab475ae83a3ac8917b289852d0a0aa6ec"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_coded_response_buffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pResponse</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_coded_response_buffer </p>
+<p>Retrieve the adress of the “coded response buffer”. This buffer contains the response to a prompt, coded according to protobuf specs, to be transmitted to the client. The stored coded length is zeroed by this call. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ppResponse</strong> – Pointer to pointer to bytes. </p></li>
+<li><p><strong>pLen</strong> – : pointer to the number of bytes for transmission. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR or a non-zero error code. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cr_report_erroriPKcz">
+<span id="_CPPv315cr_report_erroriPKcz"></span><span id="_CPPv215cr_report_erroriPKcz"></span><span id="cr_report_error__i.cCP.z"></span><span class="target" id="cr__stack_8h_1a516393a2f8a30416f04285bf3dbcd010"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_report_error</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">error_code</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">fmt</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cr_report_erroriPKcz" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_report_error </p>
+<p>Report an error condition to the client. This can be called at any point as the report to the client is asynchronous and immediate. The stack can be configured to use only the error code, but the printf-like string describing the error condition is encouraged. This is intended to make it easier to find and eliminate errors during development. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>error_code</strong> – : Use of the cr_ErrorCodes_ enum is encouraged but not required. </p></li>
+<li><p><strong>fmt</strong> – : A printf-like string with variables. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426cr_set_comm_link_connectedb">
+<span id="_CPPv326cr_set_comm_link_connectedb"></span><span id="_CPPv226cr_set_comm_link_connectedb"></span><span id="cr_set_comm_link_connected__b"></span><span class="target" id="cr__stack_8h_1ad1095632068473688fc3208985c1d01b"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_set_comm_link_connected</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">connected</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cr_set_comm_link_connectedb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_set_comm_link_connected </p>
+<p>The communication stack must inform the Reach stack of the status of the communication link. The integration must inform Reach when the connection status changes. The Reach loop only runs when the connection is valid. All parameter notifications are cleared when a connection is established. The client must reenable notifications on each connection. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connected</strong> – true if connected. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426cr_get_comm_link_connectedv">
+<span id="_CPPv326cr_get_comm_link_connectedv"></span><span id="_CPPv226cr_get_comm_link_connectedv"></span><span id="cr_get_comm_link_connected__void"></span><span class="target" id="cr__stack_8h_1a9c0aef7d4122da3699fab4a72a802832"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_comm_link_connected</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cr_get_comm_link_connectedv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_comm_link_connected </p>
+<p>Returns what was set using <a class="reference internal" href="#cr__stack_8h_1ad1095632068473688fc3208985c1d01b"><span class="std std-ref">cr_set_comm_link_connected()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if the communication link is connected. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cr_get_current_ticksv">
+<span id="_CPPv320cr_get_current_ticksv"></span><span id="_CPPv220cr_get_current_ticksv"></span><span id="cr_get_current_ticks"></span><span class="target" id="cr__stack_8h_1ac3be80269e1e885655edb9f3bdea2e96"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_current_ticks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_current_ticksv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_current_ticks </p>
+<p>The tick count is passed in to <a class="reference internal" href="#cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"><span class="std std-ref">cr_process()</span></a>. This function gives other Reach functions access to that value. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The same tick count passed into <a class="reference internal" href="#cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"><span class="std std-ref">cr_process()</span></a>. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413cr_test_sizesv">
+<span id="_CPPv313cr_test_sizesv"></span><span id="_CPPv213cr_test_sizesv"></span><span id="cr_test_sizes"></span><span class="target" id="cr__stack_8h_1a16ccedefa64bb122fda0990567e8499c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_test_sizes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413cr_test_sizesv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Verify that buffer structures fit into limited size memory </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cr_get_reach_versionv">
+<span id="_CPPv320cr_get_reach_versionv"></span><span id="_CPPv220cr_get_reach_versionv"></span><span id="cr_get_reach_version"></span><span class="target" id="cr__stack_8h_1acfc8e8d0916c391bc78466b4b4e67c54"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_reach_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_reach_versionv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_reach_version </p>
+<p>The version is in semantic version format: MAJOR.MINOR.PATCH with an optional string appended. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a pointer to a null terminated string containing the C stack version. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420cr_get_proto_versionv">
+<span id="_CPPv320cr_get_proto_versionv"></span><span id="_CPPv220cr_get_proto_versionv"></span><span id="cr_get_proto_version"></span><span class="target" id="cr__stack_8h_1a751f8c1b27464b4a4854cf6c1992d634"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_proto_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_proto_versionv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_proto_version </p>
+<p>The version is in semantic version format: MAJOR.MINOR.PATCH with an optional string appended. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a pointer to a null terminated string containing the C protobuf version. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv413reach_sizes_t">
+<span id="_CPPv313reach_sizes_t"></span><span id="_CPPv213reach_sizes_t"></span><span id="reach_sizes_t"></span><span class="target" id="structreach__sizes__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">reach_sizes_t</span></span></span><a class="headerlink" href="#_CPPv413reach_sizes_t" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;cr_stack.h&gt;</em></div>
+<p>The <a class="reference internal" href="#structreach__sizes__t"><span class="std std-ref">reach_sizes_t</span></a> is used to communicate the sizes of device structures to clients. These sizes can vary from one server to another and the client is required to respect these sizes. Many of them are determined by the chosen communication link, such as BLE. <a class="reference internal" href="#structreach__sizes__t"><span class="std std-ref">reach_sizes_t</span></a> uses smaller member sizes that the uint32 favored by protobufs. Hence it communicates these sizes without blowing up the size of the device info packet. Refer also to enum SizesOffsets reach.proto and sCr_populate_device_info_sizes() which populates the structure. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t16max_message_sizeE">
+<span id="_CPPv3N13reach_sizes_t16max_message_sizeE"></span><span id="_CPPv2N13reach_sizes_t16max_message_sizeE"></span><span id="reach_sizes_t::max_message_size__uint16_t"></span><span class="target" id="structreach__sizes__t_1a013f4c2684eed7afb7baf1c5c1817652"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_message_size</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t16max_message_sizeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The largest message that can be communicated </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t20big_data_buffer_sizeE">
+<span id="_CPPv3N13reach_sizes_t20big_data_buffer_sizeE"></span><span id="_CPPv2N13reach_sizes_t20big_data_buffer_sizeE"></span><span id="reach_sizes_t::big_data_buffer_size__uint16_t"></span><span class="target" id="structreach__sizes__t_1af8c20cb7120588cb41750315c1a1edcd"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">big_data_buffer_size</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t20big_data_buffer_sizeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The size of the buffer most of the packet is one string. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t22parameter_buffer_countE">
+<span id="_CPPv3N13reach_sizes_t22parameter_buffer_countE"></span><span id="_CPPv2N13reach_sizes_t22parameter_buffer_countE"></span><span id="reach_sizes_t::parameter_buffer_count__uint8_t"></span><span class="target" id="structreach__sizes__t_1a22e04304fa71af1fbc8d3889a002dc73"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parameter_buffer_count</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t22parameter_buffer_countE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of parameter buffers kept by the device. This determines the number of parameters that can be handled in a single message. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t22num_params_in_responseE">
+<span id="_CPPv3N13reach_sizes_t22num_params_in_responseE"></span><span id="_CPPv2N13reach_sizes_t22num_params_in_responseE"></span><span id="reach_sizes_t::num_params_in_response__uint8_t"></span><span class="target" id="structreach__sizes__t_1a0a18c41b8076b1dcb7de16803646411b"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_params_in_response</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t22num_params_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of parameter values that fit in one message. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t15description_lenE">
+<span id="_CPPv3N13reach_sizes_t15description_lenE"></span><span id="_CPPv2N13reach_sizes_t15description_lenE"></span><span id="reach_sizes_t::description_len__uint8_t"></span><span class="target" id="structreach__sizes__t_1a1b85d0a618005af0951e368d731f3f43"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description_len</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t15description_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The length of the device and command description fields. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t15max_param_bytesE">
+<span id="_CPPv3N13reach_sizes_t15max_param_bytesE"></span><span id="_CPPv2N13reach_sizes_t15max_param_bytesE"></span><span id="reach_sizes_t::max_param_bytes__uint8_t"></span><span class="target" id="structreach__sizes__t_1a41af873809467792eeabed2e659836e5"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_param_bytes</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t15max_param_bytesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of bytes in the largest parameter types eg, strings and byte array. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t26param_info_description_lenE">
+<span id="_CPPv3N13reach_sizes_t26param_info_description_lenE"></span><span id="_CPPv2N13reach_sizes_t26param_info_description_lenE"></span><span id="reach_sizes_t::param_info_description_len__uint8_t"></span><span class="target" id="structreach__sizes__t_1abed5d5466ab8fb72111fe7800d5aaeb6"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_info_description_len</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t26param_info_description_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Length of the text string for parameter info description. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t17medium_string_lenE">
+<span id="_CPPv3N13reach_sizes_t17medium_string_lenE"></span><span id="_CPPv2N13reach_sizes_t17medium_string_lenE"></span><span id="reach_sizes_t::medium_string_len__uint8_t"></span><span class="target" id="structreach__sizes__t_1a2ea2b0edc1726c7c36c0c356652ce7dd"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">medium_string_len</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t17medium_string_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The length of longer strings. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t16short_string_lenE">
+<span id="_CPPv3N13reach_sizes_t16short_string_lenE"></span><span id="_CPPv2N13reach_sizes_t16short_string_lenE"></span><span id="reach_sizes_t::short_string_len__uint8_t"></span><span class="target" id="structreach__sizes__t_1a79985c847ea324e6a36e68d4976c28d5"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">short_string_len</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t16short_string_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of bytes in short strings like the units label. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t21param_info_enum_countE">
+<span id="_CPPv3N13reach_sizes_t21param_info_enum_countE"></span><span id="_CPPv2N13reach_sizes_t21param_info_enum_countE"></span><span id="reach_sizes_t::param_info_enum_count__uint8_t"></span><span class="target" id="structreach__sizes__t_1a852892ee02d36c06d9256b4cd08ce053"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_info_enum_count</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t21param_info_enum_countE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The max number of enumeration descriptions that a server will provide in a parameter extended description. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t27num_descriptors_in_responseE">
+<span id="_CPPv3N13reach_sizes_t27num_descriptors_in_responseE"></span><span id="_CPPv2N13reach_sizes_t27num_descriptors_in_responseE"></span><span id="reach_sizes_t::num_descriptors_in_response__uint8_t"></span><span class="target" id="structreach__sizes__t_1a8dedad960bf7bce0624b3c50a8af1827"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_descriptors_in_response</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t27num_descriptors_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>number of descriptors (stream, file) that fit in one message. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t23num_param_notificationsE">
+<span id="_CPPv3N13reach_sizes_t23num_param_notificationsE"></span><span id="_CPPv2N13reach_sizes_t23num_param_notificationsE"></span><span id="reach_sizes_t::num_param_notifications__uint8_t"></span><span class="target" id="structreach__sizes__t_1ae82dd9688db31f7d0249fe5ab4da9e25"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_param_notifications</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t23num_param_notificationsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Number of parameter notifications supported. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t24num_commands_in_responseE">
+<span id="_CPPv3N13reach_sizes_t24num_commands_in_responseE"></span><span id="_CPPv2N13reach_sizes_t24num_commands_in_responseE"></span><span id="reach_sizes_t::num_commands_in_response__uint8_t"></span><span class="target" id="structreach__sizes__t_1ae35f9bfe3573750958693ff55f2e6871"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_commands_in_response</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t24num_commands_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>number of commands that can be in one info packet </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t26num_param_desc_in_responseE">
+<span id="_CPPv3N13reach_sizes_t26num_param_desc_in_responseE"></span><span id="_CPPv2N13reach_sizes_t26num_param_desc_in_responseE"></span><span id="reach_sizes_t::num_param_desc_in_response__uint8_t"></span><span class="target" id="structreach__sizes__t_1a78e712a63bd7b8a2ac632405b13fe16f"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_param_desc_in_response</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t26num_param_desc_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>number of parameter descriptions that can be in one info packet. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Cygnus Reach Embedded Stack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Getting%20Started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmers_guide/index.html">Programmer’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../crcb_weak/index.html">File: crcb_weak.h</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File: cr_stack.h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv47cr_initv"><code class="docutils literal notranslate"><span class="pre">cr_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422cr_set_advertised_namePci"><code class="docutils literal notranslate"><span class="pre">cr_set_advertised_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422cr_get_advertised_namev"><code class="docutils literal notranslate"><span class="pre">cr_get_advertised_name()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv410cr_process8uint32_t"><code class="docutils literal notranslate"><span class="pre">cr_process()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv421cr_store_coded_promptP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">cr_store_coded_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t"><code class="docutils literal notranslate"><span class="pre">cr_get_coded_response_buffer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415cr_report_erroriPKcz"><code class="docutils literal notranslate"><span class="pre">cr_report_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426cr_set_comm_link_connectedb"><code class="docutils literal notranslate"><span class="pre">cr_set_comm_link_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426cr_get_comm_link_connectedv"><code class="docutils literal notranslate"><span class="pre">cr_get_comm_link_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420cr_get_current_ticksv"><code class="docutils literal notranslate"><span class="pre">cr_get_current_ticks()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv413cr_test_sizesv"><code class="docutils literal notranslate"><span class="pre">cr_test_sizes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420cr_get_reach_versionv"><code class="docutils literal notranslate"><span class="pre">cr_get_reach_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420cr_get_proto_versionv"><code class="docutils literal notranslate"><span class="pre">cr_get_proto_version()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv413reach_sizes_t"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t16max_message_sizeE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::max_message_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t20big_data_buffer_sizeE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::big_data_buffer_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t22parameter_buffer_countE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::parameter_buffer_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t22num_params_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_params_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t15description_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t15max_param_bytesE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::max_param_bytes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t26param_info_description_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::param_info_description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t17medium_string_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::medium_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t16short_string_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::short_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t21param_info_enum_countE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::param_info_enum_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t27num_descriptors_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_descriptors_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t23num_param_notificationsE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_param_notifications</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t24num_commands_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_commands_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t26num_param_desc_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_param_desc_in_response</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../i3_log/index.html">File: i3_log.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reach_proto/index.html">File: reach.pb.h</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">API Reference</a><ul>
+      <li>Previous: <a href="../crcb_weak/index.html" title="previous chapter">File: crcb_weak.h</a></li>
+      <li>Next: <a href="../i3_log/index.html" title="next chapter">File: i3_log.h</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Chuck Peplinski, Peter S. Jamrozinski.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../_sources/API Reference/cr_stack/index.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
