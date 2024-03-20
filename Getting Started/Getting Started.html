@@ -36,8 +36,8 @@
 <section id="getting-started-with-cygnus-reach">
 <h1>Getting Started with Cygnus Reach<a class="headerlink" href="#getting-started-with-cygnus-reach" title="Link to this heading">¶</a></h1>
 <p>I3 Product Design</p>
-<p>Version 3.01</p>
-<p>Date        March 12, 2024</p>
+<p>Version 3.02</p>
+<p>Date        March 20, 2024</p>
 <p><em><strong>The project structure has changed between v2 and v3 of this document.</strong></em></p>
 </section>
 <section id="executive-summary">
@@ -205,6 +205,27 @@ This should bring the “reach-silabs” project into your workspace and it shou
 <p>The Cygnus app should be able to connect to you.</p>
 <p>By default the advertised name will contain the last three octets of the system ID.  You can use the “sn” command to set a device serial number and then this will be advertised.  This demonstrates how each Reach device can have a unique name.</p>
 <p>You might also note that the first time you run the program it will print red as it initializes the non-volatile storage.</p>
+<section id="adding-reach-to-another-silabs-project">
+<h3>Adding Reach to another SiLabs Project<a class="headerlink" href="#adding-reach-to-another-silabs-project" title="Link to this heading">¶</a></h3>
+<p>The reach-silabs demo depends on a few components on the Thunderboard.  You may need to bring these in to your SiLabs project:</p>
+<ul class="simple">
+<li><p>Iostream_retarget_stdio</p>
+<ol class="arabic simple">
+<li><p>Depends on iostream_usart_core</p></li>
+</ol>
+</li>
+<li><p>CLI Instance
+2. Create an instance “inst”</p></li>
+<li><p>Iostream_usart
+3. Create an instance named “vcom”
+4. Disable flow control.
+5. Convert \n to \r\n</p></li>
+<li><p>Iostream_stdlib_config</p></li>
+<li><p>Tiny Printf</p></li>
+<li><p>Simple LED (LED on the Thunderboard)
+6. With instance led0 connected GPIO B0</p></li>
+</ul>
+</section>
 </section>
 <section id="beyond-the-demo">
 <h2>Beyond the Demo<a class="headerlink" href="#beyond-the-demo" title="Link to this heading">¶</a></h2>
@@ -246,7 +267,10 @@ This should bring the “reach-silabs” project into your workspace and it shou
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#building-the-demo">Building the Demo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#import-the-project">Import the Project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-the-project">Import the Project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-reach-to-another-silabs-project">Adding Reach to another SiLabs Project</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#beyond-the-demo">Beyond the Demo</a></li>
 </ul>
 </li>
