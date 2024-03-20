@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>File: i3_log.h &#8212; Cygnus Reach Embedded Stack  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=12dfc556" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File: reach.pb.h" href="../reach_proto/index.html" />
+    <link rel="prev" title="File: cr_stack.h" href="../cr_stack/index.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="file-i3-log-h">
+<h1>File: i3_log.h<a class="headerlink" href="#file-i3-log-h" title="Link to this heading">¶</a></h1>
+<p>Contains printf style logging functions as used by the Cygnus Reach firmware stack. The log module is designed to be easily retargeted to the console IO of the target. It is designed to be easily removed for very small targets. The “mask” facility allows users to turn on and off logging on a per function basis. </p>
+<p><dl class="simple">
+<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_ALWAYS">
+<span class="target" id="i3__log_8h_1a4acce57b336ea13e74e65c756d9ccb52"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_ALWAYS</span></span></span><a class="headerlink" href="#c.LOG_MASK_ALWAYS" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The lowest nibble is reserved to system things. </p>
+<p>The logging system used by Reach relies on a “mask” to control the amount of logging. The “mask” concept here is chosen over the “level” concept so that masks can be assigned to specific features. Turning on all of the masks is likely to be too much information. You can turn on the logging from only the modules that you want to debug. Reach uses a few bits. You can assign your own bits. The lowest nibble is reserved to system things. Higher bits can be defined and used by the application. Cannot be supressed </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_ERROR">
+<span class="target" id="i3__log_8h_1ada906a8d411f28695e5ad71e65927916"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_ERROR</span></span></span><a class="headerlink" href="#c.LOG_MASK_ERROR" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Prints red, cannot be supressed. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_WARN">
+<span class="target" id="i3__log_8h_1a62e366d1bd8bc1ad623cda9ac2cff522"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_WARN</span></span></span><a class="headerlink" href="#c.LOG_MASK_WARN" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Prints yellow, cannot be supressed. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_BARE">
+<span class="target" id="i3__log_8h_1a410ecc58275b44043479a1f7af35fe7b"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_BARE</span></span></span><a class="headerlink" href="#c.LOG_MASK_BARE" title="Link to this definition">¶</a><br /></dt>
+<dd><p><p>trailing</p>
+<p>is omitted</p>
+</p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_REMOTE">
+<span class="target" id="i3__log_8h_1a14148239a536628efcbc2a39beeaed12"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_REMOTE</span></span></span><a class="headerlink" href="#c.LOG_MASK_REMOTE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Set this to indicate that a message should be shared remotely. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_WEAK">
+<span class="target" id="i3__log_8h_1ade35013528561f271e548653520cdd54"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_WEAK</span></span></span><a class="headerlink" href="#c.LOG_MASK_WEAK" title="Link to this definition">¶</a><br /></dt>
+<dd><p>These used by Reach features. Enable them to debug and understand. </p>
+<p>print in weak functions </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_WIRE">
+<span class="target" id="i3__log_8h_1a1fdd582c34d7430aed06079ce7ef1466"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_WIRE</span></span></span><a class="headerlink" href="#c.LOG_MASK_WIRE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show what is on the wire </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_REACH">
+<span class="target" id="i3__log_8h_1af45f5a1cb3c8f281fae946908e29ec1c"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_REACH</span></span></span><a class="headerlink" href="#c.LOG_MASK_REACH" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show reach protocol exchanges </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_PARAMS">
+<span class="target" id="i3__log_8h_1aae4b2a7b74d3a6217e17e259e517ace4"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_PARAMS</span></span></span><a class="headerlink" href="#c.LOG_MASK_PARAMS" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show parameter handling </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_FILES">
+<span class="target" id="i3__log_8h_1a28caa7b8e445caba9b76ae8633d413ef"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_FILES</span></span></span><a class="headerlink" href="#c.LOG_MASK_FILES" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show file handling </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_BLE">
+<span class="target" id="i3__log_8h_1a50e2c002d06ddfb14339129a818c5440"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_BLE</span></span></span><a class="headerlink" href="#c.LOG_MASK_BLE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show BLE handling </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_MASK_DEBUG">
+<span class="target" id="i3__log_8h_1a61d37369cb5bacacfb9e37016a55338f"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_DEBUG</span></span></span><a class="headerlink" href="#c.LOG_MASK_DEBUG" title="Link to this definition">¶</a><br /></dt>
+<dd><p>show other reach features </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.I3_LOG">
+<span class="target" id="i3__log_8h_1a77e685badbf7a45c979cee037308dd70"></span><span class="sig-name descname"><span class="n"><span class="pre">I3_LOG</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">m</span></span>, <span class="n"><span class="pre">f</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.I3_LOG" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Logging can be completely excluded from the build by defining NO_REACH_LOGGING in reach-server.h. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_REACH">
+<span class="target" id="i3__log_8h_1a950d15a69555c9c763a35a1af5d6a6db"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_REACH</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_REACH" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_ERROR">
+<span class="target" id="i3__log_8h_1abffaf9cecb61026cac6db71a16ace9c5"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_ERROR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_ERROR" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_DUMP_WIRE">
+<span class="target" id="i3__log_8h_1ab1bf0f4dbecde6dc28f25b33e841ce5a"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_DUMP_WIRE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">banner</span></span>, <span class="n"><span class="pre">buf</span></span>, <span class="n"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_DUMP_WIRE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.LOG_DUMP_MASK">
+<span class="target" id="i3__log_8h_1a2a78431fdae40efcaf2a1b091659b7ed"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_DUMP_MASK</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">mask</span></span>, <span class="n"><span class="pre">banner</span></span>, <span class="n"><span class="pre">buf</span></span>, <span class="n"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_DUMP_MASK" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415i3_log_set_mask8uint32_t">
+<span id="_CPPv315i3_log_set_mask8uint32_t"></span><span id="_CPPv215i3_log_set_mask8uint32_t"></span><span id="i3_log_set_mask__uint32_t"></span><span class="target" id="i3__log_8h_1a7158b49c3856e138394fa544b7622cd8"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_set_mask</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415i3_log_set_mask8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_set_mask </p>
+<p>Sets the mask which determines whether or not a log statement generates output. See defines starting with LOG_MASK_. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415i3_log_get_maskv">
+<span id="_CPPv315i3_log_get_maskv"></span><span id="_CPPv215i3_log_get_maskv"></span><span id="i3_log_get_mask__void"></span><span class="target" id="i3__log_8h_1a387ee42dbbeaa80a5e522aa5324838e2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_get_mask</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415i3_log_get_maskv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_set_mask </p>
+<p>Gets the mask which determines whether or not a log statement generates output. See defines starting with LOG_MASK_. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv428i3_log_set_remote_cli_enableb">
+<span id="_CPPv328i3_log_set_remote_cli_enableb"></span><span id="_CPPv228i3_log_set_remote_cli_enableb"></span><span id="i3_log_set_remote_cli_enable__b"></span><span class="target" id="i3__log_8h_1a5144ed020d32290b50db3d2c38ae4256"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_set_remote_cli_enable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428i3_log_set_remote_cli_enableb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_set_remote_cli_enable </p>
+<p>Enabling the remote CLI can generate significant BLE traffic. This can slow down speed related things like file transfer. Hence this API allows the remote command line to be easily supressed. The initial state can be set in reach-server.h </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR on success. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv428i3_log_get_remote_cli_enablev">
+<span id="_CPPv328i3_log_get_remote_cli_enablev"></span><span id="_CPPv228i3_log_get_remote_cli_enablev"></span><span id="i3_log_get_remote_cli_enable"></span><span class="target" id="i3__log_8h_1a9f67a1e068b42bc8e103853758a55794"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_get_remote_cli_enable</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428i3_log_get_remote_cli_enablev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_get_remote_cli_enable </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if enabled. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46i3_logK8uint32_tPKcz">
+<span id="_CPPv36i3_logK8uint32_tPKcz"></span><span id="_CPPv26i3_logK8uint32_tPKcz"></span><span id="i3_log__uint32_tC.cCP.z"></span><span class="target" id="i3__log_8h_1adfc040fe87e98e8388c3f5758ea4e628"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">fmt</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46i3_logK8uint32_tPKcz" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log </p>
+<p>A printf style logging function conditioned on a mask. The mask is and’ed with the control set by <a class="reference internal" href="#i3__log_8h_1a7158b49c3856e138394fa544b7622cd8"><span class="std std-ref">i3_log_set_mask()</span></a><p>. The string is printed if the result is non-zero. See LOG_MASK_. ANSI color codes are inserted for errors (red), warnings (yellow) and Reach logging (cyan). The color reset code and a \r</p>
+<p>are appended to all strings except for LOG_MASK_BARE. When the remote CLI is enabled the string is copied to the remote buffer and sent via</p>
+<a class="reference internal" href="../crcb_weak/index.html#group__cli__group_1gad3d69c24eb5bbea62f589f92baeb85e8"><span class="std std-ref">crcb_cli_respond()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mask</strong> – See LOG_MASK_. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t">
+<span id="_CPPv318i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t"></span><span id="_CPPv218i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t"></span><span id="i3_log_dump_buffer__uint32_tC.cCP.uint8_tCP.sC"></span><span class="target" id="i3__log_8h_1ab3883f9a81eebb62b08ba9b2d69454ef"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_dump_buffer</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">banner</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ptr</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_dump_buffer </p>
+<p>Logs a hex dump of a buffer. Used to view the contents of coded buffers sent and received. The buffer is dumped locally, and not remotely. The width of the dump is set by the DUMP_WIDTH defined just above this function. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> – Enable or disable using the log module’s mask feature.. </p></li>
+<li><p><strong>banner</strong> – A header to be displayed describing the hex dump. </p></li>
+<li><p><strong>ptr</strong> – A buffer of bytes to be displayed. </p></li>
+<li><p><strong>len</strong> – The number of bytes to be displayed.. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Cygnus Reach Embedded Stack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Getting%20Started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmers_guide/index.html">Programmer’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../crcb_weak/index.html">File: crcb_weak.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cr_stack/index.html">File: cr_stack.h</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File: i3_log.h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415i3_log_set_mask8uint32_t"><code class="docutils literal notranslate"><span class="pre">i3_log_set_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415i3_log_get_maskv"><code class="docutils literal notranslate"><span class="pre">i3_log_get_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv428i3_log_set_remote_cli_enableb"><code class="docutils literal notranslate"><span class="pre">i3_log_set_remote_cli_enable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv428i3_log_get_remote_cli_enablev"><code class="docutils literal notranslate"><span class="pre">i3_log_get_remote_cli_enable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv46i3_logK8uint32_tPKcz"><code class="docutils literal notranslate"><span class="pre">i3_log()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv418i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t"><code class="docutils literal notranslate"><span class="pre">i3_log_dump_buffer()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reach_proto/index.html">File: reach.pb.h</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">API Reference</a><ul>
+      <li>Previous: <a href="../cr_stack/index.html" title="previous chapter">File: cr_stack.h</a></li>
+      <li>Next: <a href="../reach_proto/index.html" title="next chapter">File: reach.pb.h</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Chuck Peplinski, Peter S. Jamrozinski.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="../../_sources/API Reference/i3_log/index.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
