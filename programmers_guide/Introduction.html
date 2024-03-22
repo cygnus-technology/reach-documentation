@@ -13,8 +13,6 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Reference" href="../API%20Reference/index.html" />
-    <link rel="prev" title="Programmer’s Guide" href="index.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -141,7 +139,7 @@
 </table>
 <p><strong>Advertisement:</strong></p>
 <p>The BLE device must advertise this UUID so that mobile apps can identify it as a Cygnus device.  Note that the “Generic Access” service must also advertise to support long device names.</p>
-<p><img alt="alt_text" src="programmers_guide/_images/SiLabsBLE.png" /></p>
+<p><img alt="alt_text" src="../_images/SiLabsBLE.png" /></p>
 </section>
 <section id="protobufs">
 <h2>Protobufs<a class="headerlink" href="#protobufs" title="Link to this heading">¶</a></h2>
@@ -164,10 +162,10 @@
 <p>The demo uses no RTOS.  Everything goes through an event loop which is part of the SiLabs BLE architecture.  Reach could easily be broken off into a separate RTOS task, but this is not demonstrated.</p>
 <p>The recommendation in general is to bring up your application so that it behaves just like the Reach demo, and then go on to customize it for your own usage.  The rest of this document attempts to give some background to better understand the application.</p>
 <p>The demo application can be configured to print out the “wire” traffic in the form of the bytes sent over BLE.  This can be a helpful reference when porting.</p>
-<p>A similar demo version is available for the Nordic nRCS.</p>
+<p>A similar demo version is available for the Nordic nRCS.  The Enovation Systems OpenPV platform also supports Reach.</p>
 <section id="porting-tasks">
 <h3>Porting Tasks<a class="headerlink" href="#porting-tasks" title="Link to this heading">¶</a></h3>
-<p>The Getting Started document has more instructions if you are porting to a SiLabs system.  The following is a very general outline.  It’s helpful to consider the task of getting your device to respond to the Reach client in some isolation from the task of customizing you list of parameters and service.</p>
+<p>The Getting Started document includes the necessary instructions if you are porting to a SiLabs system.  The following is a very general outline.  It’s helpful to consider the task of getting your device to respond to the Reach client in some isolation from the task of customizing you list of parameters and service.</p>
 <ol class="arabic simple">
 <li><p>Configure the BLE stack to advertise the Reach characteristic.</p></li>
 <li><p>Begin by getting your BLE to work.  Get your system to advertise the Reach characteristic.</p></li>
@@ -186,7 +184,7 @@
 <p>The two silabs specific files are also present here.</p>
 </section>
 <section id="reach-c-stack">
-<h3>Reach-c-stack<a class="headerlink" href="#reach-c-stack" title="Link to this heading">¶</a></h3>
+<h3>reach-c-stack<a class="headerlink" href="#reach-c-stack" title="Link to this heading">¶</a></h3>
 <p>The directory (git submodule) “reach-c-stack” is designed to be used unchanged by multiple projects.  There is no “silabs” dependent code here.  All dependencies are to be satisfied by callback functions.  The sources are provided to help you understand and debug.  If you believe changes are appropriate, feel free to submit a ticket and a pull request on github.</p>
 <ul class="simple">
 <li><p>The reach-c-stack provides the portable core of reach.  A user should not have to change this.  It could be provided as a library but we choose to provide it in source form.</p></li>
@@ -194,12 +192,13 @@
 <li><p>A “third_party” folder contains utilities from the open source web.</p></li>
 <li><p>The reach-c-stack defines the “weak” functions that the app must implement.</p></li>
 <li><p>It includes a logging function which relies on printf().</p></li>
-<li><p>A “docs” directory includes a web page which includes Doxygen generated API references.</p></li>
+<li><p>A “docs” directory includes the source for a web page which includes Doxygen generated API references.  This is accessible on the github site.</p></li>
 <li><p>reach.pb.c and reach.pb.h are generated off of reach.proto.  The protobuf source file is available on the Cygnus github site in the public reach-protobuf repository.</p></li>
 </ul>
 </section>
+</section>
 <section id="application-structure">
-<h3>Application Structure<a class="headerlink" href="#application-structure" title="Link to this heading">¶</a></h3>
+<h2>Application Structure<a class="headerlink" href="#application-structure" title="Link to this heading">¶</a></h2>
 <p>The Reach embedded system demonstrated here is written in C specifically to remain attractive to very small and simple embedded systems.  A number of design decisions follow from this.</p>
 <ol class="arabic simple">
 <li><p>The core Reach stack, which is provided by i3, should be reusable without changes on multiple platforms.</p></li>
@@ -210,7 +209,6 @@
 <li><p>The .options file is generated using an H file.  This allows an application to change the buffer sizes.  The sizes are tuned for BLE.</p></li>
 <li><p>A top level H file, “reach-server.h” defines many characteristics of the system that can be altered at build time.</p></li>
 </ol>
-</section>
 </section>
 <section id="event-loop-structure">
 <h2>Event Loop Structure<a class="headerlink" href="#event-loop-structure" title="Link to this heading">¶</a></h2>
@@ -285,7 +283,7 @@
 <p>The thunderboard reach system does not rely on malloc.  All memory allocation is static.  The protobuf system uses dynamic memory allocation in languages like Java that have garbage collection.  Using dynamic allocation in C puts the responsibility on the caller to free the memory and the authors wish to avoid this.</p>
 <section id="memory-usage">
 <h2>Memory Usage<a class="headerlink" href="#memory-usage" title="Link to this heading">¶</a></h2>
-<p>The Reach thunderboard application version 3.1.9 was analyzed for memory usage by sorting the output of the “nm” tool.  These numbers are approximate.  The code was compiled with -Os for size.  These values are intended to give an order of magnitude overview of memory usage.  Consider in particular the memory requirements that scale with the number of parameters.</p>
+<p>The Reach thunderboard application version 3.1.9 was analyzed for memory usage by sorting the output of the “nm” tool.  These numbers are approximate, and they have certainly grown as we have added features.  The code was compiled with -Os for size.  These values are intended to give an order of magnitude overview of memory usage.  Consider in particular the memory requirements that scale with the number of parameters.</p>
 <ul class="simple">
 <li><p>The reach demo application takes up about 245k of flash memory with logging enabled.</p>
 <ul>
@@ -327,14 +325,12 @@
 </li>
 <li><p><strong>cr_ReachMessage sCr_uncoded_message_structure</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Contains the encoded prompt separated from the header.
-
  Also used for enccoding.
 </pre></div>
 </div>
 </li>
 <li><p><strong>sCr_decoded_prompt_buffer</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Decoded prompt to be processed.
-
  Reuses the sCr_encoded_message_buffer.
 </pre></div>
 </div>
@@ -346,7 +342,6 @@
 </li>
 <li><p><strong>sCr_encoded_payload_buffer</strong></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Payload encoded.
-
  The payload could be encoded directly into sCr_uncoded_message_structure saving a buffer at the cost of added complexity.  The encoded payload is currently copied into the **sCr_uncoded_message_structure**
 </pre></div>
 </div>
@@ -365,7 +360,7 @@
 <p>Reach devices advertise that they support a set of “services” such as “parameters”, “files” and “commands”.  Reach devices can implement as many or as few services as are appropriate.  Support for each service is segregated into separate files in the apps directory.</p>
 <section id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
-<p>The file includes/reach-server.h is designed to be used to configure your use of Reach.  Use #defines to include or exclude services.  reach-server.h also includes #defines to configure the security of the Reach system.</p>
+<p>The file includes/reach-server.h is designed to be used to configure your use of Reach.  Use #defines to include or exclude services.  reach-server.h also demonstrates #defines to configure the security of the Reach system.</p>
 </section>
 <section id="device-information-service">
 <h2>Device Information Service<a class="headerlink" href="#device-information-service" title="Link to this heading">¶</a></h2>
@@ -399,12 +394,16 @@
 <p>When the BLE connection is made and the reach stack is active the parameters that are configured for notification are read using the crcb_parameter_read() callback function in the main process loop (cr_process()).</p>
 <p>Some items to keep in mind are:</p>
 <ul class="simple">
-<li><p>The number of parameters that can generate notifications is set by NUM_SUPPORTED_PARAM_NOTIFY in reach-server.h.  Each notification requires another 56+20 bytes.</p></li>
+<li><p>The number of parameters that can generate notifications is set by NUM_SUPPORTED_PARAM_NOTIFY in reach-server.h. Each notification requires another 56+20 bytes.</p></li>
 <li><p>Parameters are only monitored when the BLE client is connected.</p></li>
-<li><p>All parameter notifications are canceled when the client connects to the device.  The client must enable all desired notifications when it connects.</p></li>
-<li><p>Setting any of the notification parameters to zero means they will be ignored.  Setting all of them to zero (delta, min, max) is the same as disabling that notification.</p></li>
-<li><p>No delta applies for strings and byte arrays.  They are checked for any change by strcmp() and memcmp() respectively.</p></li>
+<li><p>All parameter notifications are canceled when the client connects to the device. The client must enable all desired notifications when it connects.</p></li>
+<li><p>Setting any of the notification parameters to zero means they will be ignored. Setting all of them to zero (delta, min, max) is the same as disabling that notification.</p></li>
+<li><p>No delta applies for strings and byte arrays. They are checked for any change by strcmp() and memcmp() respectively.</p></li>
 </ul>
+</section>
+<section id="access-control">
+<h3>Access Control<a class="headerlink" href="#access-control" title="Link to this heading">¶</a></h3>
+<p>The “challenge key” concept exists to allow different users different levels of access to the services and parameters.  Code in params.c demonstrates a trivial implementation of this.  Reach doesn’t impose any specific model of access control, but it is able to support it.</p>
 </section>
 </section>
 <section id="command-service">
@@ -493,12 +492,12 @@
 </section>
 <section id="security">
 <h1>Security<a class="headerlink" href="#security" title="Link to this heading">¶</a></h1>
-<p>The Reach system relies on industry standards for security.  The BLE interface can easily be encrypted.  With the exchange of a key “out of band” the encryption is quite robust.  Reach-server.h contains #defines that configure the BLE interface.  The GATT database must also be configured appropriately.  “Level 2” encryption can be achieved with devices that have no display.  Some sort of display or keypad is necssary to achieve “level 4” encryption.</p>
+<p>The Reach system relies on industry standards for security.  The BLE interface can easily be encrypted.  With the exchange of a key “out of band” the encryption is quite robust.  Reach-server.h contains #defines that configure the BLE interface.  The GATT database must also be configured appropriately.  “Level 2” protection can be achieved with devices that have no display.  Some sort of display or keypad is necssary to achieve “level 4” protection.</p>
 <p>Reach supports access control in the the form of a “challenge key” which is presented when the client requests device info.  If the device is configured to require a challenge key and none is presented then no services will be visible to the client.  The device can be coded to support multiple challenge keys, each with its own level of access.  The demonstration shows “basic” and “full” access based on two keys.</p>
 </section>
 <section id="error-handling">
 <h1>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">¶</a></h1>
-<p>Error reporting is considered important and hence Reach provides a method by which a textual error message can be delivered to the remote client.  Commands 7 and 9 trigger error reports for testing.  It can be quite helpful during development to allow device errors to be displayed at the client.  The extra 240 bytes of memory taken by the fully asynchronous error reporter can be eliminated with a #define in reach-server.h if necessary.</p>
+<p>Error reporting is considered important and hence Reach provides a method by which a textual error message can be delivered to the remote client.  Commands 6 through 10 trigger error reports for testing.  It can be quite helpful during development to allow device errors to be displayed at the client.  The extra 240 bytes of memory taken by the fully asynchronous error reporter can be eliminated with a #define in reach-server.h if necessary.</p>
 </section>
 <section id="endpoints">
 <h1>Endpoints<a class="headerlink" href="#endpoints" title="Link to this heading">¶</a></h1>
@@ -522,85 +521,11 @@
 
 
 <h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Getting%20Started/index.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Programmer’s Guide</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Cygnus Reach Programmers Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#executive-summary">Executive Summary</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#audience">Audience</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#version-history">Version History</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#product-vision">Product Vision</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#protobufs">Protobufs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-structure">System Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#porting-the-demo">Porting the Demo</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#porting-tasks">Porting Tasks</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#directory-structure">Directory Structure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#src-and-include-folders">src and include folders</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#reach-c-stack">Reach-c-stack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#application-structure">Application Structure</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#event-loop-structure">Event Loop Structure</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#threading-concerns">Threading concerns</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#feeding-data">Feeding Data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#client-server-architecture">Client - Server Architecture</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#on-logging">On Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#implementation">Implementation</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#version-handling">Version Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#on-memory-allocation">On Memory Allocation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#memory-usage">Memory Usage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#communication-buffer-structure">Communication Buffer Structure</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#services">Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#device-information-service">Device Information Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#parameter-service">Parameter Service</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#parameter-notifications">Parameter Notifications</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#command-service">Command Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#file-service">File Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cli-command-line-interface">CLI (Command Line Interface)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#time-service">Time Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wifi-service">WiFi Service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#files-parameters-and-commands">Files, Parameters, and Commands</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#multi-message-continuing-transactions">Multi-Message (Continuing) Transactions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#read-file-sequence">Read File Sequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-file-sequence">Write File Sequence</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#security">Security</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#error-handling">Error Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#endpoints">Endpoints</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../API%20Reference/index.html">API Reference</a></li>
-</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="index.html">Programmer’s Guide</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Programmer’s Guide</a></li>
-      <li>Next: <a href="../API%20Reference/index.html" title="next chapter">API Reference</a></li>
-  </ul></li>
   </ul></li>
 </ul>
 </div>
