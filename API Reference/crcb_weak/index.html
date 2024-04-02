@@ -13,6 +13,8 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File: cr_stack.h" href="../cr_stack/index.html" />
+    <link rel="prev" title="API Reference" href="../index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -528,13 +530,17 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv432crcb_file_get_preferred_ack_rateb">
-<span id="_CPPv332crcb_file_get_preferred_ack_rateb"></span><span id="_CPPv232crcb_file_get_preferred_ack_rateb"></span><span id="crcb_file_get_preferred_ack_rate__b"></span><span class="target" id="crcb__weak_8h_1a57e4e6c62cf31ccdc8617ccc88557e7e"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_file_get_preferred_ack_rate</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_write</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432crcb_file_get_preferred_ack_rateb" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb">
+<span id="_CPPv332crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb"></span><span id="_CPPv232crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb"></span><span id="crcb_file_get_preferred_ack_rate__uint32_t.uint32_t.b"></span><span class="target" id="crcb__weak_8h_1ac5e45e4d6cab893a97448643a7687844"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_file_get_preferred_ack_rate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fid</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">requested_rate</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_write</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_file_get_preferred_ack_rate </p>
 <p>If the device has a preferred acknowledge rate it can implement this function to advise the file transfer code of the rate. Higher ack rates mean less acknowlegements and faster file trasnfer. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>is_write</strong> – true if enquiring about write. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fid</strong> – : File ID, in case this affects the decision </p></li>
+<li><p><strong>requested_rate</strong> – might factor into the decison. </p></li>
+<li><p><strong>is_write</strong> – true if enquiring about write. </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A return value of zero means that there is no preferred rate and the client can specify it. </p>
@@ -685,11 +691,66 @@
 
 
 <h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../Getting%20Started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmers_guide/index.html">Programmer’s Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">File: crcb_weak.h</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_get_coded_promptP7uint8_tP6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_get_coded_prompt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_send_coded_responsePK7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_send_coded_response()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv417crcb_notify_errorP14cr_ErrorReport"><code class="docutils literal notranslate"><span class="pre">crcb_notify_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_device_get_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_challenge_key_is_validv"><code class="docutils literal notranslate"><span class="pre">crcb_challenge_key_is_valid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_invalidate_challenge_keyv"><code class="docutils literal notranslate"><span class="pre">crcb_invalidate_challenge_key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422crcb_enable_remote_cliv"><code class="docutils literal notranslate"><span class="pre">crcb_enable_remote_cli()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_ping_get_signal_strengthP6int8_t"><code class="docutils literal notranslate"><span class="pre">crcb_ping_get_signal_strength()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv414crcb_cli_enterPKc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_enter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv416crcb_cli_respondPc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_respond()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_set_command_linePKc"><code class="docutils literal notranslate"><span class="pre">crcb_set_command_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_get_command_linev"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_parameter_get_countv"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_get_count()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_parameter_discover_resetK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_discover_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv428crcb_parameter_discover_nextP16cr_ParameterInfo"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_discover_next()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_parameter_ex_get_countK7int32_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_ex_get_count()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv432crcb_parameter_ex_discover_resetK7int32_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_ex_discover_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv431crcb_parameter_ex_discover_nextP22cr_ParamExInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_ex_discover_next()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv419crcb_parameter_readK8uint32_tP17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_read()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_parameter_writeK8uint32_tPK17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_compute_parameter_hashv"><code class="docutils literal notranslate"><span class="pre">crcb_compute_parameter_hash()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv417crcb_notify_paramP17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_notify_param()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422crcb_get_command_countv"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_count()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_command_discover_resetK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_command_discover_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426crcb_command_discover_nextP14cr_CommandInfo"><code class="docutils literal notranslate"><span class="pre">crcb_command_discover_next()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_command_executeK7uint8_t"><code class="docutils literal notranslate"><span class="pre">crcb_command_execute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_file_get_file_countv"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_file_count()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_file_discover_resetK7uint8_t"><code class="docutils literal notranslate"><span class="pre">crcb_file_discover_reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv423crcb_file_discover_nextP11cr_FileInfo"><code class="docutils literal notranslate"><span class="pre">crcb_file_discover_next()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv425crcb_file_get_description8uint32_tP11cr_FileInfo"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_description()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_preferred_ack_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv414crcb_read_fileK8uint32_tKiK6size_tP7uint8_tPi"><code class="docutils literal notranslate"><span class="pre">crcb_read_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415crcb_write_fileK8uint32_tKiK6size_tPK7uint8_t"><code class="docutils literal notranslate"><span class="pre">crcb_write_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415crcb_erase_fileK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_erase_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_file_transfer_completeK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_file_transfer_complete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426crcb_file_prepare_to_writeK8uint32_tK6size_tK6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_file_prepare_to_write()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv413crcb_time_getP18cr_TimeGetResponse"><code class="docutils literal notranslate"><span class="pre">crcb_time_get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv413crcb_time_setPK17cr_TimeSetRequest"><code class="docutils literal notranslate"><span class="pre">crcb_time_set()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cr_stack/index.html">File: cr_stack.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../i3_log/index.html">File: i3_log.h</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reach_proto/index.html">File: reach.pb.h</a></li>
+</ul>
+</li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">API Reference</a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter">API Reference</a></li>
+      <li>Next: <a href="../cr_stack/index.html" title="next chapter">File: cr_stack.h</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>
