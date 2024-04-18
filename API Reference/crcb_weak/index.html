@@ -174,10 +174,28 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv422crcb_enable_remote_cliv">
-<span id="_CPPv322crcb_enable_remote_cliv"></span><span id="_CPPv222crcb_enable_remote_cliv"></span><span id="crcb_enable_remote_cli__void"></span><span class="target" id="crcb__weak_8h_1a8225f2c4e59450f50b7ce5e26dd29864"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_enable_remote_cli</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422crcb_enable_remote_cliv" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_enable_remote_cli </p>
-<p>As the logging utility is technically part of Reach, this callback lets the app block the remote CLI. </p>
+<dt class="sig sig-object cpp" id="_CPPv419crcb_access_grantedK13cr_ServiceIdsK7int32_t">
+<span id="_CPPv319crcb_access_grantedK13cr_ServiceIdsK7int32_t"></span><span id="_CPPv219crcb_access_grantedK13cr_ServiceIdsK7int32_t"></span><span id="crcb_access_granted__cr_ServiceIdsC.int32_tC"></span><span class="target" id="crcb__weak_8h_1a42fc0986bda0b454d6583f9f8a04c151"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_access_granted</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../reach_proto/index.html#_CPPv413cr_ServiceIds" title="cr_ServiceIds"><span class="n"><span class="pre">cr_ServiceIds</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">service</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">id</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419crcb_access_grantedK13cr_ServiceIdsK7int32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>crcb_access_granted </p>
+<p>A gateway to access control. Called anywhere that access might be blocked. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>service</strong> – : Which service to check. </p></li>
+<li><p><strong>id</strong> – : Which ID to check. Negative to check any. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if access is granted. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv429crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse">
+<span id="_CPPv329crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"></span><span id="_CPPv229crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"></span><span id="crcb_configure_access_control__cr_DeviceInfoRequestCP.cr_DeviceInfoResponseP"></span><span class="target" id="crcb__weak_8h_1af3e82e77567f29a173d6869125b5b4c0"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_configure_access_control</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../reach_proto/index.html#_CPPv420cr_DeviceInfoRequest" title="cr_DeviceInfoRequest"><span class="n"><span class="pre">cr_DeviceInfoRequest</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">request</span></span>, <a class="reference internal" href="../reach_proto/index.html#_CPPv421cr_DeviceInfoResponse" title="cr_DeviceInfoResponse"><span class="n"><span class="pre">cr_DeviceInfoResponse</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pDi</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse" title="Link to this definition">¶</a><br /></dt>
+<dd><p>crcb_configure_access_control </p>
+<p>Configure the device info response based on the challenge key in the device info request. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>true if access is granted. </p>
@@ -406,6 +424,24 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or an error from the cr_ErrorCodes_ enumeration if the notification fails. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t">
+<span id="_CPPv332crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t"></span><span id="_CPPv232crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t"></span><span id="crcb_parameter_notification_init__cr_ParameterNotifyConfigCPP.sP"></span><span class="target" id="crcb__weak_8h_1aa9f2e7049811e17393a85b0076d99362"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_parameter_notification_init</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../reach_proto/index.html#_CPPv424cr_ParameterNotifyConfig" title="cr_ParameterNotifyConfig"><span class="n"><span class="pre">cr_ParameterNotifyConfig</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pNoteArray</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pNum</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>crcb_parameter_notification_init </p>
+<p>Called in <a class="reference internal" href="../cr_stack/index.html#cr__stack_8h_1aa30199827c6ac809190a2494b2a66a13"><span class="std std-ref">cr_init()</span></a> to enable any notifications that the device wishes to be active. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pNoteArray</strong> – pointer to an array of cr_ParameterNotifyConfig structures describing the desired notifications. </p></li>
+<li><p><strong>pNum</strong> – How many are in the array. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or a non-zero error like cr_ErrorCodes_INVALID_PARAMETER. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -702,7 +738,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_device_get_info()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_challenge_key_is_validv"><code class="docutils literal notranslate"><span class="pre">crcb_challenge_key_is_valid()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_invalidate_challenge_keyv"><code class="docutils literal notranslate"><span class="pre">crcb_invalidate_challenge_key()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv422crcb_enable_remote_cliv"><code class="docutils literal notranslate"><span class="pre">crcb_enable_remote_cli()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv419crcb_access_grantedK13cr_ServiceIdsK7int32_t"><code class="docutils literal notranslate"><span class="pre">crcb_access_granted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_configure_access_control()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_ping_get_signal_strengthP6int8_t"><code class="docutils literal notranslate"><span class="pre">crcb_ping_get_signal_strength()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv414crcb_cli_enterPKc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_enter()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv416crcb_cli_respondPc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_respond()</span></code></a></li>
@@ -718,6 +755,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_parameter_writeK8uint32_tPK17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_write()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_compute_parameter_hashv"><code class="docutils literal notranslate"><span class="pre">crcb_compute_parameter_hash()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv417crcb_notify_paramP17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_notify_param()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv432crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_notification_init()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv422crcb_get_command_countv"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_count()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_command_discover_resetK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_command_discover_reset()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv426crcb_command_discover_nextP14cr_CommandInfo"><code class="docutils literal notranslate"><span class="pre">crcb_command_discover_next()</span></code></a></li>

@@ -191,6 +191,38 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv428cr_clear_param_notificationsv">
+<span id="_CPPv328cr_clear_param_notificationsv"></span><span id="_CPPv228cr_clear_param_notificationsv"></span><span id="cr_clear_param_notifications__void"></span><span class="target" id="cr__stack_8h_1a85a3e4645ae1d7a0f0da93e08d8216ab"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_clear_param_notifications</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cr_clear_param_notificationsv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_clear_param_notifications </p>
+<p>Disable all parameter notifications. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv427cr_init_param_notificationsv">
+<span id="_CPPv327cr_init_param_notificationsv"></span><span id="_CPPv227cr_init_param_notificationsv"></span><span id="cr_init_param_notifications__void"></span><span class="target" id="cr__stack_8h_1a13628f1b7d9e8d3b741f74abb59c9f53"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_init_param_notifications</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427cr_init_param_notificationsv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_init_param_notifications </p>
+<p>Enable all locally specified parameter notifications via <a class="reference internal" href="../crcb_weak/index.html#crcb__weak_8h_1aa9f2e7049811e17393a85b0076d99362"><span class="std std-ref">crcb_parameter_notification_init()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv430cr_get_notification_statisticsP8uint32_tP8uint32_t">
+<span id="_CPPv330cr_get_notification_statisticsP8uint32_tP8uint32_t"></span><span id="_CPPv230cr_get_notification_statisticsP8uint32_tP8uint32_t"></span><span id="cr_get_notification_statistics__uint32_tP.uint32_tP"></span><span class="target" id="cr__stack_8h_1a1d4cc1d22aac96d5418c8e510df69bc6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_notification_statistics</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">numActive</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">numSent</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430cr_get_notification_statisticsP8uint32_tP8uint32_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>cr_get_notification_statistics </p>
+<p>
+numSent is zeroed by each call. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numActive</strong> – <p>is populated with the number of</p>
+<p>notifications currently enabled.a</p>
+</p></li>
+<li><p><strong>numSent</strong> – is populated with the number of notifications sent since last called.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420cr_get_current_ticksv">
 <span id="_CPPv320cr_get_current_ticksv"></span><span id="_CPPv220cr_get_current_ticksv"></span><span id="cr_get_current_ticks"></span><span class="target" id="cr__stack_8h_1ac3be80269e1e885655edb9f3bdea2e96"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_current_ticks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_current_ticksv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_current_ticks </p>
@@ -296,9 +328,9 @@
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t21param_info_enum_countE">
-<span id="_CPPv3N13reach_sizes_t21param_info_enum_countE"></span><span id="_CPPv2N13reach_sizes_t21param_info_enum_countE"></span><span id="reach_sizes_t::param_info_enum_count__uint8_t"></span><span class="target" id="structreach__sizes__t_1a852892ee02d36c06d9256b4cd08ce053"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_info_enum_count</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t21param_info_enum_countE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The max number of enumeration descriptions that a server will provide in a parameter extended description. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N13reach_sizes_t25param_notify_config_countE">
+<span id="_CPPv3N13reach_sizes_t25param_notify_config_countE"></span><span id="_CPPv2N13reach_sizes_t25param_notify_config_countE"></span><span id="reach_sizes_t::param_notify_config_count__uint8_t"></span><span class="target" id="structreach__sizes__t_1aa5271dfba261cd2c3e17f1b7bddd3821"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_notify_config_count</span></span></span><a class="headerlink" href="#_CPPv4N13reach_sizes_t25param_notify_config_countE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The max number of parameter notification configurations that a client can provide in a message. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -362,6 +394,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv415cr_report_erroriPKcz"><code class="docutils literal notranslate"><span class="pre">cr_report_error()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv426cr_set_comm_link_connectedb"><code class="docutils literal notranslate"><span class="pre">cr_set_comm_link_connected()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv426cr_get_comm_link_connectedv"><code class="docutils literal notranslate"><span class="pre">cr_get_comm_link_connected()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv428cr_clear_param_notificationsv"><code class="docutils literal notranslate"><span class="pre">cr_clear_param_notifications()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv427cr_init_param_notificationsv"><code class="docutils literal notranslate"><span class="pre">cr_init_param_notifications()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv430cr_get_notification_statisticsP8uint32_tP8uint32_t"><code class="docutils literal notranslate"><span class="pre">cr_get_notification_statistics()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420cr_get_current_ticksv"><code class="docutils literal notranslate"><span class="pre">cr_get_current_ticks()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv413cr_test_sizesv"><code class="docutils literal notranslate"><span class="pre">cr_test_sizes()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420cr_get_reach_versionv"><code class="docutils literal notranslate"><span class="pre">cr_get_reach_version()</span></code></a></li>
@@ -376,7 +411,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t26param_info_description_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::param_info_description_len</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t17medium_string_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::medium_string_len</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t16short_string_lenE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::short_string_len</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t21param_info_enum_countE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::param_info_enum_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t25param_notify_config_countE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::param_notify_config_count</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t27num_descriptors_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_descriptors_in_response</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t23num_param_notificationsE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_param_notifications</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N13reach_sizes_t24num_commands_in_responseE"><code class="docutils literal notranslate"><span class="pre">reach_sizes_t::num_commands_in_response</span></code></a></li>
