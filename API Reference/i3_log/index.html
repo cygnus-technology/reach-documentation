@@ -127,28 +127,33 @@
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.I3_LOG">
 <span class="target" id="i3__log_8h_1a77e685badbf7a45c979cee037308dd70"></span><span class="sig-name descname"><span class="n"><span class="pre">I3_LOG</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">m</span></span>, <span class="n"><span class="pre">f</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.I3_LOG" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Logging can be completely excluded from the build by defining NO_REACH_LOGGING in reach-server.h. </p>
+<dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
+<p>Logging can be completely excluded from the build by defining NO_REACH_LOGGING in reach-server.h. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_REACH">
 <span class="target" id="i3__log_8h_1a950d15a69555c9c763a35a1af5d6a6db"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_REACH</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_REACH" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
+</dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_ERROR">
 <span class="target" id="i3__log_8h_1abffaf9cecb61026cac6db71a16ace9c5"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_ERROR</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">format</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_ERROR" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
+</dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_DUMP_WIRE">
 <span class="target" id="i3__log_8h_1ab1bf0f4dbecde6dc28f25b33e841ce5a"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_DUMP_WIRE</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">banner</span></span>, <span class="n"><span class="pre">buf</span></span>, <span class="n"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_DUMP_WIRE" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
+</dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_DUMP_MASK">
 <span class="target" id="i3__log_8h_1a2a78431fdae40efcaf2a1b091659b7ed"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_DUMP_MASK</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">mask</span></span>, <span class="n"><span class="pre">banner</span></span>, <span class="n"><span class="pre">buf</span></span>, <span class="n"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.LOG_DUMP_MASK" title="Link to this definition">¶</a><br /></dt>
-<dd></dd></dl>
+<dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
+</dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
@@ -171,10 +176,12 @@
 <dt class="sig sig-object cpp" id="_CPPv428i3_log_set_remote_cli_enableb">
 <span id="_CPPv328i3_log_set_remote_cli_enableb"></span><span id="_CPPv228i3_log_set_remote_cli_enableb"></span><span id="i3_log_set_remote_cli_enable__b"></span><span class="target" id="i3__log_8h_1a5144ed020d32290b50db3d2c38ae4256"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_set_remote_cli_enable</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">enable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428i3_log_set_remote_cli_enableb" title="Link to this definition">¶</a><br /></dt>
 <dd><p>i3_log_set_remote_cli_enable </p>
-<p>Enabling the remote CLI can generate significant BLE traffic. This can slow down speed related things like file transfer. Hence this API allows the remote command line to be easily supressed. The initial state can be set in reach-server.h </p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR on success. </p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> – : Enabling the remote CLI can generate significant BLE traffic. This can slow down speed related things like file transfer. Hence this API allows the remote command line to be easily supressed. The initial state can be set in reach-server.h </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -199,7 +206,10 @@
 <a class="reference internal" href="../crcb_weak/index.html#group__cli__group_1gad3d69c24eb5bbea62f589f92baeb85e8"><span class="std std-ref">crcb_cli_respond()</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mask</strong> – See LOG_MASK_. </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask</strong> – See LOG_MASK_. </p></li>
+<li><p><strong>fmt</strong> – : standard printf format. </p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
