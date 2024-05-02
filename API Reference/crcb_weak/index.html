@@ -122,21 +122,6 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv417crcb_notify_errorP14cr_ErrorReport">
-<span id="_CPPv317crcb_notify_errorP14cr_ErrorReport"></span><span id="_CPPv217crcb_notify_errorP14cr_ErrorReport"></span><span id="crcb_notify_error__cr_ErrorReportP"></span><span class="target" id="crcb__weak_8h_1a3b11bcf43cdbfb72f4f57e10cda502e3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_notify_error</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../reach_proto/index.html#_CPPv414cr_ErrorReport" title="cr_ErrorReport"><span class="n"><span class="pre">cr_ErrorReport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">err</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417crcb_notify_errorP14cr_ErrorReport" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_notify_error </p>
-<p>Called by <a class="reference internal" href="../cr_stack/index.html#cr__stack_8h_1a516393a2f8a30416f04285bf3dbcd010"><span class="std std-ref">cr_report_error()</span></a>. Can be called at any point. The device must override this implementation to send error messages to the client. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>err</strong> – Pointer to a structure with a code and a string. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or a non-zero error preferably from the cr_ErrorCodes_ enumeration </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse">
 <span id="_CPPv320crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"></span><span id="_CPPv220crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"></span><span id="crcb_device_get_info__cr_DeviceInfoRequestCP.cr_DeviceInfoResponseP"></span><span class="target" id="crcb__weak_8h_1afa548e52dcd28d72d83c4c0f0a631e08"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_device_get_info</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../reach_proto/index.html#_CPPv420cr_DeviceInfoRequest" title="cr_DeviceInfoRequest"><span class="n"><span class="pre">cr_DeviceInfoRequest</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">request</span></span>, <a class="reference internal" href="../reach_proto/index.html#_CPPv421cr_DeviceInfoResponse" title="cr_DeviceInfoResponse"><span class="n"><span class="pre">cr_DeviceInfoResponse</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pDi</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_device_get_info </p>
@@ -231,21 +216,6 @@
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or a non-zero error preferably from the cr_ErrorCodes_ enumeration </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv416crcb_cli_respondPc">
-<span id="_CPPv316crcb_cli_respondPc"></span><span id="_CPPv216crcb_cli_respondPc"></span><span id="crcb_cli_respond__cP"></span><span class="target" id="group__cli__group_1gad3d69c24eb5bbea62f589f92baeb85e8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_cli_respond</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cli</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416crcb_cli_respondPc" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_cli_respond </p>
-<p>When the device supports a CLI it is expected to share anything printed to the CLI back to the stack for remote display using <a class="reference internal" href="#group__cli__group_1gad3d69c24eb5bbea62f589f92baeb85e8"><span class="std std-ref">crcb_cli_respond()</span></a> The device must override the weak implementation to support remote access to the command line. The implementation can call this at any time to print to the remote CLI </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cli</strong> – A string being sent back to the remote CLI. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or a non-zero error preferably from the cr_ErrorCodes_ enumeration. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -409,21 +379,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR on success or an error from the cr_ErrorCodes_ enumeration. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv417crcb_notify_paramP17cr_ParameterValue">
-<span id="_CPPv317crcb_notify_paramP17cr_ParameterValue"></span><span id="_CPPv217crcb_notify_paramP17cr_ParameterValue"></span><span id="crcb_notify_param__cr_ParameterValueP"></span><span class="target" id="crcb__weak_8h_1ae51ca248003dd502bbc9be7779fc4421"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_notify_param</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="../reach_proto/index.html#_CPPv417cr_ParameterValue" title="cr_ParameterValue"><span class="n"><span class="pre">cr_ParameterValue</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">param</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417crcb_notify_paramP17cr_ParameterValue" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_notify_param </p>
-<p>parameter notifications are handled by the Reach stack. The stack will use the read parameters to be notified on an appropriate timescale and send notifications if enough changes. The overriding implementation must signal the client that this parameter may have changed. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>param</strong> – (input) pointer to the parameter data that has changed. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or an error from the cr_ErrorCodes_ enumeration if the notification fails. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -629,13 +584,13 @@
 <dt class="sig sig-object cpp" id="_CPPv415crcb_erase_fileK8uint32_t">
 <span id="_CPPv315crcb_erase_fileK8uint32_t"></span><span id="_CPPv215crcb_erase_fileK8uint32_t"></span><span id="crcb_erase_file__uint32_tC"></span><span class="target" id="crcb__weak_8h_1a18d6fb028c52a99b2a7fb1e680466f7c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_erase_file</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fid</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415crcb_erase_fileK8uint32_t" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_erase_file </p>
-<p>The device overrides this method to accept a command to set the length of a file to zero, erasing it. </p>
+<p>The device overrides this method to accept a command to set the length of a file to zero, erasing it. The erase process may take some time the implementation can choose to return cr_ErrorCodes_INCOMPLETE to indicate that the erase command needs to be issued again until it succeeds. Other errors are reported via the result field and its message. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>fid</strong> – (input) which file </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>returns zero or an error code </p>
+<dd class="field-even"><p>returns cr_ErrorCodes_NO_ERROR or cr_ErrorCodes_INCOMPLETE. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -731,7 +686,6 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">File: crcb_weak.h</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_get_coded_promptP7uint8_tP6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_get_coded_prompt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_send_coded_responsePK7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_send_coded_response()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv417crcb_notify_errorP14cr_ErrorReport"><code class="docutils literal notranslate"><span class="pre">crcb_notify_error()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_device_get_infoPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_device_get_info()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_challenge_key_is_validv"><code class="docutils literal notranslate"><span class="pre">crcb_challenge_key_is_valid()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_invalidate_challenge_keyv"><code class="docutils literal notranslate"><span class="pre">crcb_invalidate_challenge_key()</span></code></a></li>
@@ -739,7 +693,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_configure_access_control()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_ping_get_signal_strengthP6int8_t"><code class="docutils literal notranslate"><span class="pre">crcb_ping_get_signal_strength()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv414crcb_cli_enterPKc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_enter()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv416crcb_cli_respondPc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_respond()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_set_command_linePKc"><code class="docutils literal notranslate"><span class="pre">crcb_set_command_line()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_get_command_linev"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_line()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_parameter_get_countv"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_get_count()</span></code></a></li>
@@ -751,7 +704,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv419crcb_parameter_readK8uint32_tP17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_read()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420crcb_parameter_writeK8uint32_tPK17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_write()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_compute_parameter_hashv"><code class="docutils literal notranslate"><span class="pre">crcb_compute_parameter_hash()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv417crcb_notify_paramP17cr_ParameterValue"><code class="docutils literal notranslate"><span class="pre">crcb_notify_param()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv432crcb_parameter_notification_initPPK24cr_ParameterNotifyConfigP6size_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_notification_init()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv422crcb_get_command_countv"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_count()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427crcb_command_discover_resetK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_command_discover_reset()</span></code></a></li>
