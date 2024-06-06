@@ -36,8 +36,8 @@
 <section id="cygnus-reach-programmers-introduction">
 <h1>Cygnus Reach Programmers Introduction<a class="headerlink" href="#cygnus-reach-programmers-introduction" title="Link to this heading">¶</a></h1>
 <p>I3 Product Design</p>
-<p>Version     3.2</p>
-<p>Date        April 17, 2024</p>
+<p>Version     3.3</p>
+<p>Date        June 6, 2024</p>
 </section>
 <section id="executive-summary">
 <h1>Executive Summary<a class="headerlink" href="#executive-summary" title="Link to this heading">¶</a></h1>
@@ -60,6 +60,7 @@
 <p>2.0:  February 9, 2024.  Adds features such as parameter notifications.  Provided with a separate release note.</p>
 <p>3.0: March 12, 2024.  The directory structure of the code is changed to simplify maintenance.</p>
 <p>3.1: March 20, 2024. Editing pass to reflectd the latest (stack 2.5) changes.</p>
+<p>3.3: June 6, 2024: More overview.</p>
 </section>
 </section>
 <section id="product-vision">
@@ -94,6 +95,23 @@
 <p>The three demo systems illustrate Reach on systems of different complexity.  The Linux based OpenPV displays from Enovation are an example of Reach in a sophisticated system.  The reach-silabs Thunderboard demo shows Reach with no OS as appropriate for tiny embedded systems.  The “reacher-nfc” demo shows Reach running on a Nordic development board.  Reach can certainly be deployed in everything in between, and there is ongoing development in other common systems.</p>
 <p>The three system approach to support (device, phone, web page) is a key concept.  This acknowledges the three users in the system.  The product user has access to an embedded device as well as a mobile phone.  The support engineer uses a web browser so as to display data on a larger screen.  The embedded system designer is the third user, as the embedded system builder must include the support required.</p>
 <p>A proper Cygnus Reach system design includes much input from customer support engineers.  The Cygnus Reach system exists to facilitate field support.  Hence the information presented to the support engineers must be what they need.  With new products the embedded system designer often has no customer support engineers available to provide design guidance.  Hence Cygnus Reach systems are often deployed in two phases.  The first phase exposes the things that the embedded system designer finds necessary.  The second phase tunes this to emphasize the things customer support needs to see first.</p>
+<hr class="docutils" />
+<section id="typical-interactions">
+<h2>Typical Interactions<a class="headerlink" href="#typical-interactions" title="Link to this heading">¶</a></h2>
+<p>A typical Reach session follows a pattern like this:</p>
+<p><img alt="alt_text" src="../_images/typical.png" /></p>
+<p>The exchange always begins with the client requesting device information.  The server replies.  The client can then request more information such as the parameter data.  The response packets are limited in size so as to fit in a Bluetooth Low Energ (BLE) packet.  The response may require several “continued” packets.  A subsequent section titled “Multi-Message (Continuing) Transactions” gives some more background on how continuing messages are handled.
+The device information response tells the client what services are supported by the server.  The client can then request data from each service as necessary.</p>
+<p>A number of design patterns used by Reach in multiple places.</p>
+<ol class="arabic simple">
+<li><p>The prompt-response pattern, where the server provides data in response to a prompt.</p></li>
+<li><p>The discovery pattern, where the client discovers what the server can provide.</p></li>
+<li><p>The continuing message pattern, where requested data is provided in several packets of size appropriate for the transport mechanism.</p></li>
+<li><p>The notification pattern, where the server provides a message to the client without a prompt.</p></li>
+</ol>
+<p>This basis allows a simple system to deliver much utility.</p>
+</section>
+<hr class="docutils" />
 <section id="bluetooth-low-energy-ble">
 <h2>Bluetooth Low Energy (BLE)<a class="headerlink" href="#bluetooth-low-energy-ble" title="Link to this heading">¶</a></h2>
 <p>The Reach protocol assumes that there exists a reliable underlying transport layer.  The protocol is initially deployed using the Bluetooth Low Energy transport protocol.  The implementation of the Reach stack is easily customized to fit the constraints of the available transport layer.</p>
@@ -574,6 +592,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#product-vision">Product Vision</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#typical-interactions">Typical Interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#other-transport-protocols">Other Transport Protocols</a></li>
 </ul>
