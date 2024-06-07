@@ -35,7 +35,7 @@
 <h1>File: reach.pb.h<a class="headerlink" href="#file-reach-pb-h" title="Link to this heading">¶</a></h1>
 <p>This file an annotated copy of reach.pb.h which is generated from reach.proto. reach.pb.h defines the protobuf structures in C. This version is hand edited to provide Doxygen comments. See reach.pb.h for the latest. </p>
 <p><dl class="simple">
-<dt><strong>Date</strong></dt><dd><p>2024-04-02 </p>
+<dt><strong>Date</strong></dt><dd><p>2024-06-06 </p>
 </dd>
 <dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023-2024 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
 </dd>
@@ -428,9 +428,9 @@
 </dd></dl>
 
 <dl class="cpp type">
-<dt class="sig sig-object cpp" id="_CPPv421cr_StreamOpenResponse">
-<span id="_CPPv321cr_StreamOpenResponse"></span><span id="_CPPv221cr_StreamOpenResponse"></span><span id="cr_StreamOpenResponse"></span><span class="target" id="reach_8h_1aba3598459d440cc90acb3c477c20cea0"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv422_cr_StreamOpenResponse" title="_cr_StreamOpenResponse"><span class="n"><span class="pre">_cr_StreamOpenResponse</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_StreamOpenResponse</span></span></span><a class="headerlink" href="#_CPPv421cr_StreamOpenResponse" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The response to a StreamOpen request </p>
+<dt class="sig sig-object cpp" id="_CPPv417cr_StreamResponse">
+<span id="_CPPv317cr_StreamResponse"></span><span id="_CPPv217cr_StreamResponse"></span><span id="cr_StreamResponse"></span><span class="target" id="reach_8h_1ac26aa559239549263f803a683ff97d4d"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv418_cr_StreamResponse" title="_cr_StreamResponse"><span class="n"><span class="pre">_cr_StreamResponse</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_StreamResponse</span></span></span><a class="headerlink" href="#_CPPv417cr_StreamResponse" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The response to StreamOpen and StreamClose requests </p>
 </dd></dl>
 
 <dl class="cpp type">
@@ -539,6 +539,12 @@
 <dt class="sig sig-object cpp" id="_CPPv425cr_WiFiConnectionResponse">
 <span id="_CPPv325cr_WiFiConnectionResponse"></span><span id="_CPPv225cr_WiFiConnectionResponse"></span><span id="cr_WiFiConnectionResponse"></span><span class="target" id="reach_8h_1ad0a10ce4b9f3fc96507b6be70e6be6eb"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv426_cr_WiFiConnectionResponse" title="_cr_WiFiConnectionResponse"><span class="n"><span class="pre">_cr_WiFiConnectionResponse</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_WiFiConnectionResponse</span></span></span><a class="headerlink" href="#_CPPv425cr_WiFiConnectionResponse" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Describes the response to a WiFi connection request </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv414cr_BufferSizes">
+<span id="_CPPv314cr_BufferSizes"></span><span id="_CPPv214cr_BufferSizes"></span><span id="cr_BufferSizes"></span><span class="target" id="reach_8h_1a4fd5a0fbdcd022444e82573d1fe8fd2f"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415_cr_BufferSizes" title="_cr_BufferSizes"><span class="n"><span class="pre">_cr_BufferSizes</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_BufferSizes</span></span></span><a class="headerlink" href="#_CPPv414cr_BufferSizes" title="Link to this definition">¶</a><br /></dt>
+<dd><p>This data describing the sizes of the structures used in C code is communicated in a packed format in the device info structure. Here it’s defined in an unpacked (all 32 bit) format. Use the offsets defined below (SizesOffsets) to unpack into this structure. The file “reach_ble_proto_sizes.h” and the function populate_device_info_sizes() are good places to look for further info. </p>
 </dd></dl>
 
 </div>
@@ -1196,6 +1202,12 @@
 </dd></dl>
 
 <dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE">
+<span id="_CPPv3N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE"></span><span id="_CPPv2N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE"></span><span class="target" id="reach_8h_1a18f77042c75ee36765f5318c790a9df3a26a0617b8f7d4a916dcc3d401fc0d045"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_ErrorCodes_INCOMPLETE</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The requested operation is incomplete and must be retried. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE">
 <span id="_CPPv3N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE"></span><span id="_CPPv2N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE"></span><span class="target" id="reach_8h_1a18f77042c75ee36765f5318c790a9df3a782db40c4fa0e842b9c1844478a71195"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_ErrorCodes_ABORT</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Operation cancellation </p>
@@ -1580,13 +1592,13 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N22_cr_DeviceInfoResponse16firmware_versionE">
 <span id="_CPPv3N22_cr_DeviceInfoResponse16firmware_versionE"></span><span id="_CPPv2N22_cr_DeviceInfoResponse16firmware_versionE"></span><span id="_cr_DeviceInfoResponse::firmware_version__cA"></span><span class="target" id="struct__cr__DeviceInfoResponse_1a89795de7b39e925eac2adae782fc40b5"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">firmware_version</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">16</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N22_cr_DeviceInfoResponse16firmware_versionE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Each endpoint advertises a “main” FW version. If there are other FW versions, put them in the parameter repo. </p>
+<dd><p>Each endpoint advertises a “main” FW version. If there are other FW versions, put them in the parameter repo. MAJOR.MINOR.PATCH-NOTE. Parse MAJOR.MINOR.PATCH for compatibility. Note is not parsed. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N22_cr_DeviceInfoResponse23protocol_version_stringE">
 <span id="_CPPv3N22_cr_DeviceInfoResponse23protocol_version_stringE"></span><span id="_CPPv2N22_cr_DeviceInfoResponse23protocol_version_stringE"></span><span id="_cr_DeviceInfoResponse::protocol_version_string__cA"></span><span class="target" id="struct__cr__DeviceInfoResponse_1a8657c2f13ed738bb2e659bd8f9920768"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">protocol_version_string</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">16</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N22_cr_DeviceInfoResponse23protocol_version_stringE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>The protocol version as a string against which this device is built. </p>
+<dd><p>The protocol version as a string against which this device is built. Parse MAJOR.MINOR.PATCH for compatibility. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3209,20 +3221,32 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamInfo9stream_idE">
-<span id="_CPPv3N14_cr_StreamInfo9stream_idE"></span><span id="_CPPv2N14_cr_StreamInfo9stream_idE"></span><span id="_cr_StreamInfo::stream_id__int32_t"></span><span class="target" id="struct__cr__StreamInfo_1aa0ecf169ab41dbc8c00ea06438d06973"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo9stream_idE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14_cr_StreamInfo9stream_idE"></span><span id="_CPPv2N14_cr_StreamInfo9stream_idE"></span><span id="_cr_StreamInfo::stream_id__uint32_t"></span><span class="target" id="struct__cr__StreamInfo_1a29fc0b53a316e88e5b8b5bf8219bc71a"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo9stream_idE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The ID by which this stream is addressed. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamInfo6accessE">
 <span id="_CPPv3N14_cr_StreamInfo6accessE"></span><span id="_CPPv2N14_cr_StreamInfo6accessE"></span><span id="_cr_StreamInfo::access__cr_AccessLevel"></span><span class="target" id="struct__cr__StreamInfo_1a6f6aaa57705ca9477e144cbb530f3c48"></span><a class="reference internal" href="#_CPPv414cr_AccessLevel" title="cr_AccessLevel"><span class="n"><span class="pre">cr_AccessLevel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">access</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo6accessE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Access Level for Stream (Read / Write). </p>
+<dd><p>Read: The stream flows from the device. Write: The stream flows to the device. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamInfo4nameE">
 <span id="_CPPv3N14_cr_StreamInfo4nameE"></span><span id="_CPPv2N14_cr_StreamInfo4nameE"></span><span id="_cr_StreamInfo::name__cA"></span><span class="target" id="struct__cr__StreamInfo_1aa376929bb2107877e123fb1a3c838594"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">name</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">24</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo4nameE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>A human readable name for this stream. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamInfo11descriptionE">
+<span id="_CPPv3N14_cr_StreamInfo11descriptionE"></span><span id="_CPPv2N14_cr_StreamInfo11descriptionE"></span><span id="_cr_StreamInfo::description__cA"></span><span class="target" id="struct__cr__StreamInfo_1aeafa9331ad986d09dd5fa257f620402a"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">48</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo11descriptionE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A longer human readable description of this stream. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamInfo8dataTypeE">
+<span id="_CPPv3N14_cr_StreamInfo8dataTypeE"></span><span id="_CPPv2N14_cr_StreamInfo8dataTypeE"></span><span id="_cr_StreamInfo::dataType__cr_ParameterDataType"></span><span class="target" id="struct__cr__StreamInfo_1a655346165ee312bd3c2974c14a701540"></span><a class="reference internal" href="#_CPPv420cr_ParameterDataType" title="cr_ParameterDataType"><span class="n"><span class="pre">cr_ParameterDataType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataType</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamInfo8dataTypeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The type of the data in the stream </p>
 </dd></dl>
 
 </div>
@@ -3244,7 +3268,7 @@
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N27_cr_DiscoverStreamsResponse7streamsE">
-<span id="_CPPv3N27_cr_DiscoverStreamsResponse7streamsE"></span><span id="_CPPv2N27_cr_DiscoverStreamsResponse7streamsE"></span><span id="_cr_DiscoverStreamsResponse::streams__cr_StreamInfoA"></span><span class="target" id="struct__cr__DiscoverStreamsResponse_1a8b381811edd7b64cd7bda6d22b5e0efd"></span><a class="reference internal" href="#_CPPv413cr_StreamInfo" title="cr_StreamInfo"><span class="n"><span class="pre">cr_StreamInfo</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">streams</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">4</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N27_cr_DiscoverStreamsResponse7streamsE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27_cr_DiscoverStreamsResponse7streamsE"></span><span id="_CPPv2N27_cr_DiscoverStreamsResponse7streamsE"></span><span id="_cr_DiscoverStreamsResponse::streams__cr_StreamInfoA"></span><span class="target" id="struct__cr__DiscoverStreamsResponse_1a0a583609bc856575267220f24ed2e72f"></span><a class="reference internal" href="#_CPPv413cr_StreamInfo" title="cr_StreamInfo"><span class="n"><span class="pre">cr_StreamInfo</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">streams</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">2</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N27_cr_DiscoverStreamsResponse7streamsE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>An array containing descriptions of the supported streams </p>
 </dd></dl>
 
@@ -3261,48 +3285,42 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamOpen9stream_idE">
-<span id="_CPPv3N14_cr_StreamOpen9stream_idE"></span><span id="_CPPv2N14_cr_StreamOpen9stream_idE"></span><span id="_cr_StreamOpen::stream_id__int32_t"></span><span class="target" id="struct__cr__StreamOpen_1a162bc04f5bba508fd03c98f401e50a73"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamOpen9stream_idE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14_cr_StreamOpen9stream_idE"></span><span id="_CPPv2N14_cr_StreamOpen9stream_idE"></span><span id="_cr_StreamOpen::stream_id__uint32_t"></span><span class="target" id="struct__cr__StreamOpen_1a7ed770d09b003626754e39b3059fd054"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamOpen9stream_idE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The ID by which this stream is addressed. </p>
-</dd></dl>
-
-<dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamOpen6accessE">
-<span id="_CPPv3N14_cr_StreamOpen6accessE"></span><span id="_CPPv2N14_cr_StreamOpen6accessE"></span><span id="_cr_StreamOpen::access__cr_AccessLevel"></span><span class="target" id="struct__cr__StreamOpen_1a2dae01bfc7ba655e46e5f385e813321d"></span><a class="reference internal" href="#_CPPv414cr_AccessLevel" title="cr_AccessLevel"><span class="n"><span class="pre">cr_AccessLevel</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">access</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamOpen6accessE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Read or write access </p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
 <dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv422_cr_StreamOpenResponse">
-<span id="_CPPv322_cr_StreamOpenResponse"></span><span id="_CPPv222_cr_StreamOpenResponse"></span><span id="_cr_StreamOpenResponse"></span><span class="target" id="struct__cr__StreamOpenResponse"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_cr_StreamOpenResponse</span></span></span><a class="headerlink" href="#_CPPv422_cr_StreamOpenResponse" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv418_cr_StreamResponse">
+<span id="_CPPv318_cr_StreamResponse"></span><span id="_CPPv218_cr_StreamResponse"></span><span id="_cr_StreamResponse"></span><span class="target" id="struct__cr__StreamResponse"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_cr_StreamResponse</span></span></span><a class="headerlink" href="#_CPPv418_cr_StreamResponse" title="Link to this definition">¶</a><br /></dt>
 <dd><div class="docutils container">
 <em>#include &lt;reach.h&gt;</em></div>
-<p>The response to a StreamOpen request </p>
+<p>The response to StreamOpen and StreamClose requests </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N22_cr_StreamOpenResponse9stream_idE">
-<span id="_CPPv3N22_cr_StreamOpenResponse9stream_idE"></span><span id="_CPPv2N22_cr_StreamOpenResponse9stream_idE"></span><span id="_cr_StreamOpenResponse::stream_id__int32_t"></span><span class="target" id="struct__cr__StreamOpenResponse_1a4562de0f63a0dc8d61575393dd6a6788"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N22_cr_StreamOpenResponse9stream_idE" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N18_cr_StreamResponse9stream_idE">
+<span id="_CPPv3N18_cr_StreamResponse9stream_idE"></span><span id="_CPPv2N18_cr_StreamResponse9stream_idE"></span><span id="_cr_StreamResponse::stream_id__uint32_t"></span><span class="target" id="struct__cr__StreamResponse_1a4076b83a408ae2fc1e5fccae317e6359"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N18_cr_StreamResponse9stream_idE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The ID by which this stream is addressed. </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N22_cr_StreamOpenResponse6resultE">
-<span id="_CPPv3N22_cr_StreamOpenResponse6resultE"></span><span id="_CPPv2N22_cr_StreamOpenResponse6resultE"></span><span id="_cr_StreamOpenResponse::result__int32_t"></span><span class="target" id="struct__cr__StreamOpenResponse_1a5b396e3e0f9e24e3041c6052b2629d15"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N22_cr_StreamOpenResponse6resultE" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N18_cr_StreamResponse6resultE">
+<span id="_CPPv3N18_cr_StreamResponse6resultE"></span><span id="_CPPv2N18_cr_StreamResponse6resultE"></span><span id="_cr_StreamResponse::result__int32_t"></span><span class="target" id="struct__cr__StreamResponse_1a17ebde493db6a7aae3dda4623a66e06f"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N18_cr_StreamResponse6resultE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>A result of zero indicates OK </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N22_cr_StreamOpenResponse18has_result_messageE">
-<span id="_CPPv3N22_cr_StreamOpenResponse18has_result_messageE"></span><span id="_CPPv2N22_cr_StreamOpenResponse18has_result_messageE"></span><span id="_cr_StreamOpenResponse::has_result_message__b"></span><span class="target" id="struct__cr__StreamOpenResponse_1a13e4c24dab806263d662cfe3643e8831"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_result_message</span></span></span><a class="headerlink" href="#_CPPv4N22_cr_StreamOpenResponse18has_result_messageE" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N18_cr_StreamResponse18has_result_messageE">
+<span id="_CPPv3N18_cr_StreamResponse18has_result_messageE"></span><span id="_CPPv2N18_cr_StreamResponse18has_result_messageE"></span><span id="_cr_StreamResponse::has_result_message__b"></span><span class="target" id="struct__cr__StreamResponse_1a31cbe4b40081e0e133e2b0f0e8fa9d33"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_result_message</span></span></span><a class="headerlink" href="#_CPPv4N18_cr_StreamResponse18has_result_messageE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Controls corresponding optional member. </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N22_cr_StreamOpenResponse14result_messageE">
-<span id="_CPPv3N22_cr_StreamOpenResponse14result_messageE"></span><span id="_CPPv2N22_cr_StreamOpenResponse14result_messageE"></span><span id="_cr_StreamOpenResponse::result_message__cA"></span><span class="target" id="struct__cr__StreamOpenResponse_1a46cf585ef4b3930619a51e95275569a5"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result_message</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">194</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N22_cr_StreamOpenResponse14result_messageE" title="Link to this definition">¶</a><br /></dt>
+<dt class="sig sig-object cpp" id="_CPPv4N18_cr_StreamResponse14result_messageE">
+<span id="_CPPv3N18_cr_StreamResponse14result_messageE"></span><span id="_CPPv2N18_cr_StreamResponse14result_messageE"></span><span id="_cr_StreamResponse::result_message__cA"></span><span class="target" id="struct__cr__StreamResponse_1a03ce56bd3b826b7bb06a614189466541"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result_message</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">194</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N18_cr_StreamResponse14result_messageE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Allows to provide a human readable explanation in case of an error. </p>
 </dd></dl>
 
@@ -3319,7 +3337,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N15_cr_StreamClose9stream_idE">
-<span id="_CPPv3N15_cr_StreamClose9stream_idE"></span><span id="_CPPv2N15_cr_StreamClose9stream_idE"></span><span id="_cr_StreamClose::stream_id__int32_t"></span><span class="target" id="struct__cr__StreamClose_1a6c13eb4a1549b4e7e9a2c2f83ada6c9d"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_StreamClose9stream_idE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N15_cr_StreamClose9stream_idE"></span><span id="_CPPv2N15_cr_StreamClose9stream_idE"></span><span id="_cr_StreamClose::stream_id__uint32_t"></span><span class="target" id="struct__cr__StreamClose_1a8b74585a31d3b5a726d2866350f03155"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_StreamClose9stream_idE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The ID by which this stream is addressed. </p>
 </dd></dl>
 
@@ -3336,7 +3354,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamData9stream_idE">
-<span id="_CPPv3N14_cr_StreamData9stream_idE"></span><span id="_CPPv2N14_cr_StreamData9stream_idE"></span><span id="_cr_StreamData::stream_id__int32_t"></span><span class="target" id="struct__cr__StreamData_1a5b35e29a5d7a54395522f471156c42f1"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamData9stream_idE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N14_cr_StreamData9stream_idE"></span><span id="_CPPv2N14_cr_StreamData9stream_idE"></span><span id="_cr_StreamData::stream_id__uint32_t"></span><span class="target" id="struct__cr__StreamData_1ad1a154582201974b69381fbba8bdb1b7"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">stream_id</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamData9stream_idE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The ID by which this stream is addressed. </p>
 </dd></dl>
 
@@ -3362,6 +3380,12 @@
 <dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamData8checksumE">
 <span id="_CPPv3N14_cr_StreamData8checksumE"></span><span id="_CPPv2N14_cr_StreamData8checksumE"></span><span id="_cr_StreamData::checksum__int32_t"></span><span class="target" id="struct__cr__StreamData_1a42cba13bfb8cec598a0ca87917c49b1e"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">checksum</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamData8checksumE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Optional RFC 1071 checksum for integrity checking </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14_cr_StreamData8dataTypeE">
+<span id="_CPPv3N14_cr_StreamData8dataTypeE"></span><span id="_CPPv2N14_cr_StreamData8dataTypeE"></span><span id="_cr_StreamData::dataType__cr_ParameterDataType"></span><span class="target" id="struct__cr__StreamData_1a4ff40ad3dac4f90f9cafc480915c6d7d"></span><a class="reference internal" href="#_CPPv420cr_ParameterDataType" title="cr_ParameterDataType"><span class="n"><span class="pre">cr_ParameterDataType</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">dataType</span></span></span><a class="headerlink" href="#_CPPv4N14_cr_StreamData8dataTypeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The type of the data in the stream </p>
 </dd></dl>
 
 </div>
@@ -3737,16 +3761,15 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N24_cr_DiscoverWiFiResponse13scan_is_validE">
-<span id="_CPPv3N24_cr_DiscoverWiFiResponse13scan_is_validE"></span><span id="_CPPv2N24_cr_DiscoverWiFiResponse13scan_is_validE"></span><span id="_cr_DiscoverWiFiResponse::scan_is_valid__b"></span><span class="target" id="struct__cr__DiscoverWiFiResponse_1abb70491ef37dba7573f5aca50ef89fec"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">scan_is_valid</span></span></span><a class="headerlink" href="#_CPPv4N24_cr_DiscoverWiFiResponse13scan_is_validE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>true if a recent scan is complete. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N24_cr_DiscoverWiFiResponse6resultE">
+<span id="_CPPv3N24_cr_DiscoverWiFiResponse6resultE"></span><span id="_CPPv2N24_cr_DiscoverWiFiResponse6resultE"></span><span id="_cr_DiscoverWiFiResponse::result__int32_t"></span><span class="target" id="struct__cr__DiscoverWiFiResponse_1a73ca5bb02a3c1ac205f36fe15c334205"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N24_cr_DiscoverWiFiResponse6resultE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A result of zero indicates completed OK. The “INCOMPLETE” result means the operation must be retried. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N24_cr_DiscoverWiFiResponse8cd_countE">
 <span id="_CPPv3N24_cr_DiscoverWiFiResponse8cd_countE"></span><span id="_CPPv2N24_cr_DiscoverWiFiResponse8cd_countE"></span><span id="_cr_DiscoverWiFiResponse::cd_count__pb_size_t"></span><span class="target" id="struct__cr__DiscoverWiFiResponse_1a08e63cacb90874a0ff53744a3ff29051"></span><span class="n"><span class="pre">pb_size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cd_count</span></span></span><a class="headerlink" href="#_CPPv4N24_cr_DiscoverWiFiResponse8cd_countE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Controls corresponding repeated member. </p>
-</dd></dl>
+<dd></dd></dl>
 
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N24_cr_DiscoverWiFiResponse2cdE">
@@ -3767,7 +3790,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N25_cr_WiFiConnectionRequest4ssidE">
-<span id="_CPPv3N25_cr_WiFiConnectionRequest4ssidE"></span><span id="_CPPv2N25_cr_WiFiConnectionRequest4ssidE"></span><span id="_cr_WiFiConnectionRequest::ssid__pb_callback_t"></span><span class="target" id="struct__cr__WiFiConnectionRequest_1a826dbc1d8d006128f388790391804c21"></span><span class="n"><span class="pre">pb_callback_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ssid</span></span></span><a class="headerlink" href="#_CPPv4N25_cr_WiFiConnectionRequest4ssidE" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv3N25_cr_WiFiConnectionRequest4ssidE"></span><span id="_CPPv2N25_cr_WiFiConnectionRequest4ssidE"></span><span id="_cr_WiFiConnectionRequest::ssid__cA"></span><span class="target" id="struct__cr__WiFiConnectionRequest_1aeaf9e72573bb4a0e168fa1e7953e1dea"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ssid</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">32</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N25_cr_WiFiConnectionRequest4ssidE" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The SSID to be addressed </p>
 </dd></dl>
 
@@ -3821,7 +3844,25 @@
 <dl class="cpp var">
 <dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse6resultE">
 <span id="_CPPv3N26_cr_WiFiConnectionResponse6resultE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse6resultE"></span><span id="_cr_WiFiConnectionResponse::result__int32_t"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1ad7b835c619afaf495138095cc1c6f454"></span><span class="n"><span class="pre">int32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result</span></span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse6resultE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>A result of zero indicates OK </p>
+<dd><p>A result of zero indicates completed OK. The “INCOMPLETE” result means the operation must be retried. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse9connectedE">
+<span id="_CPPv3N26_cr_WiFiConnectionResponse9connectedE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse9connectedE"></span><span id="_cr_WiFiConnectionResponse::connected__b"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1ac6e70f56d29640a6a00f7d24b99cff87"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">connected</span></span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse9connectedE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>true if the requested connection is valid. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE">
+<span id="_CPPv3N26_cr_WiFiConnectionResponse18has_result_messageE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse18has_result_messageE"></span><span id="_cr_WiFiConnectionResponse::has_result_message__b"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1a0b63413751872d63cfc6d17423c3045b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_result_message</span></span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Controls corresponding optional member. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse14result_messageE">
+<span id="_CPPv3N26_cr_WiFiConnectionResponse14result_messageE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse14result_messageE"></span><span id="_cr_WiFiConnectionResponse::result_message__cA"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1acd44d21897e93760934cfab30c77bf3c"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result_message</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">194</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse14result_messageE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Allows to provide a human readable explanation in case of an error. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -3836,16 +3877,99 @@
 <dd><p>RSSI </p>
 </dd></dl>
 
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv415_cr_BufferSizes">
+<span id="_CPPv315_cr_BufferSizes"></span><span id="_CPPv215_cr_BufferSizes"></span><span id="_cr_BufferSizes"></span><span class="target" id="struct__cr__BufferSizes"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_cr_BufferSizes</span></span></span><a class="headerlink" href="#_CPPv415_cr_BufferSizes" title="Link to this definition">¶</a><br /></dt>
+<dd><div class="docutils container">
+<em>#include &lt;reach.h&gt;</em></div>
+<p>This data describing the sizes of the structures used in C code is communicated in a packed format in the device info structure. Here it’s defined in an unpacked (all 32 bit) format. Use the offsets defined below (SizesOffsets) to unpack into this structure. The file “reach_ble_proto_sizes.h” and the function populate_device_info_sizes() are good places to look for further info. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE">
-<span id="_CPPv3N26_cr_WiFiConnectionResponse18has_result_messageE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse18has_result_messageE"></span><span id="_cr_WiFiConnectionResponse::has_result_message__b"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1a0b63413751872d63cfc6d17423c3045b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">has_result_message</span></span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Controls corresponding optional member. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes16max_message_sizeE">
+<span id="_CPPv3N15_cr_BufferSizes16max_message_sizeE"></span><span id="_CPPv2N15_cr_BufferSizes16max_message_sizeE"></span><span id="_cr_BufferSizes::max_message_size__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a7d2309036d05eedeb67d38eed131d91d"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_message_size</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes16max_message_sizeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The largest message that can be communicated (16 bits) </p>
 </dd></dl>
 
 <dl class="cpp var">
-<dt class="sig sig-object cpp" id="_CPPv4N26_cr_WiFiConnectionResponse14result_messageE">
-<span id="_CPPv3N26_cr_WiFiConnectionResponse14result_messageE"></span><span id="_CPPv2N26_cr_WiFiConnectionResponse14result_messageE"></span><span id="_cr_WiFiConnectionResponse::result_message__cA"></span><span class="target" id="struct__cr__WiFiConnectionResponse_1acd44d21897e93760934cfab30c77bf3c"></span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">result_message</span></span></span><span class="p"><span class="pre">[</span></span><span class="m"><span class="pre">194</span></span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#_CPPv4N26_cr_WiFiConnectionResponse14result_messageE" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Allows to provide a human readable explanation in case of an error. </p>
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes20big_data_buffer_sizeE">
+<span id="_CPPv3N15_cr_BufferSizes20big_data_buffer_sizeE"></span><span id="_CPPv2N15_cr_BufferSizes20big_data_buffer_sizeE"></span><span id="_cr_BufferSizes::big_data_buffer_size__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a37338f1cd848ed1df3542023237d37d2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">big_data_buffer_size</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes20big_data_buffer_sizeE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The size of the buffer used for the longest strings. (16 bits) Examples include the command line and the error string. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes22parameter_buffer_countE">
+<span id="_CPPv3N15_cr_BufferSizes22parameter_buffer_countE"></span><span id="_CPPv2N15_cr_BufferSizes22parameter_buffer_countE"></span><span id="_cr_BufferSizes::parameter_buffer_count__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1ad7149ae32fa74d3aa1a6796155fe8bd6"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">parameter_buffer_count</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes22parameter_buffer_countE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of parameter buffers kept by the device. This determines the number of parameters that can be handled in a single message. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes22num_params_in_responseE">
+<span id="_CPPv3N15_cr_BufferSizes22num_params_in_responseE"></span><span id="_CPPv2N15_cr_BufferSizes22num_params_in_responseE"></span><span id="_cr_BufferSizes::num_params_in_response__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a6a0c67fae81cef1abf3d5e399eb17f52"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_params_in_response</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes22num_params_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of parameter values that fit in one message. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes27num_descriptors_in_responseE">
+<span id="_CPPv3N15_cr_BufferSizes27num_descriptors_in_responseE"></span><span id="_CPPv2N15_cr_BufferSizes27num_descriptors_in_responseE"></span><span id="_cr_BufferSizes::num_descriptors_in_response__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a57f5df2195dd560ee2cfde120a4dfea1"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_descriptors_in_response</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes27num_descriptors_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>number of descriptors (stream, file) that fit in one message. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes15description_lenE">
+<span id="_CPPv3N15_cr_BufferSizes15description_lenE"></span><span id="_CPPv2N15_cr_BufferSizes15description_lenE"></span><span id="_cr_BufferSizes::description_len__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1ad9a87800d2d1859866d9da4c0c7e3e97"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">description_len</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes15description_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The length of the description fields in various structures Previously known as long_string_len. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes15max_param_bytesE">
+<span id="_CPPv3N15_cr_BufferSizes15max_param_bytesE"></span><span id="_CPPv2N15_cr_BufferSizes15max_param_bytesE"></span><span id="_cr_BufferSizes::max_param_bytes__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a9f9ed23f3e0f305edb24e857e141e6b2"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">max_param_bytes</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes15max_param_bytesE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of bytes in the largest parameter data. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes17medium_string_lenE">
+<span id="_CPPv3N15_cr_BufferSizes17medium_string_lenE"></span><span id="_CPPv2N15_cr_BufferSizes17medium_string_lenE"></span><span id="_cr_BufferSizes::medium_string_len__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a5a7c3efde4ecb3b4f258cdaeae9c05e4"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">medium_string_len</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes17medium_string_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The length of most (medium) strings. (8 bits) Used for device name, file names, command names. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes16short_string_lenE">
+<span id="_CPPv3N15_cr_BufferSizes16short_string_lenE"></span><span id="_CPPv2N15_cr_BufferSizes16short_string_lenE"></span><span id="_cr_BufferSizes::short_string_len__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a56914e32df1613e41adb2489409865e0"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">short_string_len</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes16short_string_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of bytes in short strings like the units label. (8 bits) Also the names of enumerations and the version string. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes26param_info_description_lenE">
+<span id="_CPPv3N15_cr_BufferSizes26param_info_description_lenE"></span><span id="_CPPv2N15_cr_BufferSizes26param_info_description_lenE"></span><span id="_cr_BufferSizes::param_info_description_len__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a1e8390b6f57dbcaf2b7183e22f0e73c1"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_info_description_len</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes26param_info_description_lenE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The number of bytes in the param info description string (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes23num_param_notificationsE">
+<span id="_CPPv3N15_cr_BufferSizes23num_param_notificationsE"></span><span id="_CPPv2N15_cr_BufferSizes23num_param_notificationsE"></span><span id="_cr_BufferSizes::num_param_notifications__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a178d60b320fdb86088ef41cae89f8b77"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_param_notifications</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes23num_param_notificationsE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Number of parameter notifications supported (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes24num_commands_in_responseE">
+<span id="_CPPv3N15_cr_BufferSizes24num_commands_in_responseE"></span><span id="_CPPv2N15_cr_BufferSizes24num_commands_in_responseE"></span><span id="_cr_BufferSizes::num_commands_in_response__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a1f0a9058291bf27f2a4bdb2e1edb814b"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">num_commands_in_response</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes24num_commands_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>not currently used (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes28count_param_desc_in_responseE">
+<span id="_CPPv3N15_cr_BufferSizes28count_param_desc_in_responseE"></span><span id="_CPPv2N15_cr_BufferSizes28count_param_desc_in_responseE"></span><span id="_cr_BufferSizes::count_param_desc_in_response__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a19cbb6fa739fa548ed108e6cce46184a"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">count_param_desc_in_response</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes28count_param_desc_in_responseE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>number of param descriptions that can be in one info packet. (8 bits) </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N15_cr_BufferSizes25param_notify_config_countE">
+<span id="_CPPv3N15_cr_BufferSizes25param_notify_config_countE"></span><span id="_CPPv2N15_cr_BufferSizes25param_notify_config_countE"></span><span id="_cr_BufferSizes::param_notify_config_count__uint32_t"></span><span class="target" id="struct__cr__BufferSizes_1a194e0725cef9e7bd79d2d1da4ad8ce7a"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">param_notify_config_count</span></span></span><a class="headerlink" href="#_CPPv4N15_cr_BufferSizes25param_notify_config_countE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The max number of parameter notification configurations that can be in one packet. (8 bits) </p>
 </dd></dl>
 
 </div>
@@ -3941,7 +4065,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv413cr_StreamInfo"><code class="docutils literal notranslate"><span class="pre">cr_StreamInfo</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv426cr_DiscoverStreamsResponse"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverStreamsResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv413cr_StreamOpen"><code class="docutils literal notranslate"><span class="pre">cr_StreamOpen</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv421cr_StreamOpenResponse"><code class="docutils literal notranslate"><span class="pre">cr_StreamOpenResponse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv417cr_StreamResponse"><code class="docutils literal notranslate"><span class="pre">cr_StreamResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv414cr_StreamClose"><code class="docutils literal notranslate"><span class="pre">cr_StreamClose</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv413cr_StreamData"><code class="docutils literal notranslate"><span class="pre">cr_StreamData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv419cr_DiscoverCommands"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverCommands</span></code></a></li>
@@ -3960,6 +4084,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv423cr_DiscoverWiFiResponse"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverWiFiResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv424cr_WiFiConnectionRequest"><code class="docutils literal notranslate"><span class="pre">cr_WiFiConnectionRequest</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv425cr_WiFiConnectionResponse"><code class="docutils literal notranslate"><span class="pre">cr_WiFiConnectionResponse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv414cr_BufferSizes"><code class="docutils literal notranslate"><span class="pre">cr_BufferSizes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv428_cr_ReachProto_MAJOR_Version"><code class="docutils literal notranslate"><span class="pre">_cr_ReachProto_MAJOR_Version</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N28_cr_ReachProto_MAJOR_Version41cr_ReachProto_MAJOR_Version_MAJOR_VERSIONE"><code class="docutils literal notranslate"><span class="pre">_cr_ReachProto_MAJOR_Version::cr_ReachProto_MAJOR_Version_MAJOR_VERSION</span></code></a></li>
 </ul>
@@ -4089,6 +4214,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_RESERVED_3E"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_RESERVED_3</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_ErrorCodes25cr_ErrorCodes_NO_RESOURCEE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_NO_RESOURCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INVALID_IDE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_INVALID_ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_INCOMPLETE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_ABORT</span></code></a></li>
 </ul>
 </li>
@@ -4485,6 +4611,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamInfo9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::stream_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamInfo6accessE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::access</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamInfo4nameE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamInfo11descriptionE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamInfo8dataTypeE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::dataType</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv427_cr_DiscoverStreamsResponse"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverStreamsResponse</span></code></a><ul>
@@ -4494,14 +4622,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv414_cr_StreamOpen"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamOpen9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen::stream_id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamOpen6accessE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen::access</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv422_cr_StreamOpenResponse"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22_cr_StreamOpenResponse9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::stream_id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22_cr_StreamOpenResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::result</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22_cr_StreamOpenResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::has_result_message</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N22_cr_StreamOpenResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::result_message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv418_cr_StreamResponse"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N18_cr_StreamResponse9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::stream_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N18_cr_StreamResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::result</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N18_cr_StreamResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::has_result_message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N18_cr_StreamResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::result_message</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv415_cr_StreamClose"><code class="docutils literal notranslate"><span class="pre">_cr_StreamClose</span></code></a><ul>
@@ -4514,6 +4641,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamData12message_dataE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::message_data</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamData12has_checksumE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::has_checksum</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamData8checksumE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::checksum</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N14_cr_StreamData8dataTypeE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::dataType</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv420_cr_DiscoverCommands"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverCommands</span></code></a><ul>
@@ -4593,7 +4721,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv424_cr_DiscoverWiFiResponse"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N24_cr_DiscoverWiFiResponse13scan_is_validE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::scan_is_valid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N24_cr_DiscoverWiFiResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::result</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N24_cr_DiscoverWiFiResponse8cd_countE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::cd_count</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N24_cr_DiscoverWiFiResponse2cdE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::cd</span></code></a></li>
 </ul>
@@ -4610,10 +4738,28 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv426_cr_WiFiConnectionResponse"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::result</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse19has_signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_signal_strength</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse15signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::signal_strength</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse9connectedE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::connected</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_result_message</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::result_message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse19has_signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_signal_strength</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N26_cr_WiFiConnectionResponse15signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::signal_strength</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv415_cr_BufferSizes"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes16max_message_sizeE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::max_message_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes20big_data_buffer_sizeE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::big_data_buffer_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes22parameter_buffer_countE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::parameter_buffer_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes22num_params_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_params_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes27num_descriptors_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_descriptors_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes15description_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes15max_param_bytesE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::max_param_bytes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes17medium_string_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::medium_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes16short_string_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::short_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes26param_info_description_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::param_info_description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes23num_param_notificationsE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_param_notifications</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes24num_commands_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_commands_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes28count_param_desc_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::count_param_desc_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4N15_cr_BufferSizes25param_notify_config_countE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::param_notify_config_count</span></code></a></li>
 </ul>
 </li>
 </ul>

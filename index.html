@@ -75,6 +75,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="programmers_guide/Introduction.html#product-vision">Product Vision</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programmers_guide/Introduction.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="programmers_guide/Introduction.html#typical-interactions">Typical Interactions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="programmers_guide/Introduction.html#bluetooth-low-energy-ble">Bluetooth Low Energy (BLE)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="programmers_guide/Introduction.html#other-transport-protocols">Other Transport Protocols</a></li>
 </ul>
@@ -189,6 +190,7 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv421cr_store_coded_promptP7uint8_t6size_t"><code class="docutils literal notranslate"><span class="pre">cr_store_coded_prompt()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t"><code class="docutils literal notranslate"><span class="pre">cr_get_coded_response_buffer()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv415cr_report_erroriPKcz"><code class="docutils literal notranslate"><span class="pre">cr_report_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv416cr_notify_streamP13cr_StreamData"><code class="docutils literal notranslate"><span class="pre">cr_notify_stream()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv426cr_set_comm_link_connectedb"><code class="docutils literal notranslate"><span class="pre">cr_set_comm_link_connected()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv426cr_get_comm_link_connectedv"><code class="docutils literal notranslate"><span class="pre">cr_get_comm_link_connected()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/cr_stack/index.html#_CPPv428cr_clear_param_notificationsv"><code class="docutils literal notranslate"><span class="pre">cr_clear_param_notifications()</span></code></a></li>
@@ -290,7 +292,7 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv413cr_StreamInfo"><code class="docutils literal notranslate"><span class="pre">cr_StreamInfo</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv426cr_DiscoverStreamsResponse"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverStreamsResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv413cr_StreamOpen"><code class="docutils literal notranslate"><span class="pre">cr_StreamOpen</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv421cr_StreamOpenResponse"><code class="docutils literal notranslate"><span class="pre">cr_StreamOpenResponse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv417cr_StreamResponse"><code class="docutils literal notranslate"><span class="pre">cr_StreamResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv414cr_StreamClose"><code class="docutils literal notranslate"><span class="pre">cr_StreamClose</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv413cr_StreamData"><code class="docutils literal notranslate"><span class="pre">cr_StreamData</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv419cr_DiscoverCommands"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverCommands</span></code></a></li>
@@ -309,6 +311,7 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv423cr_DiscoverWiFiResponse"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverWiFiResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv424cr_WiFiConnectionRequest"><code class="docutils literal notranslate"><span class="pre">cr_WiFiConnectionRequest</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv425cr_WiFiConnectionResponse"><code class="docutils literal notranslate"><span class="pre">cr_WiFiConnectionResponse</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv414cr_BufferSizes"><code class="docutils literal notranslate"><span class="pre">cr_BufferSizes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv428_cr_ReachProto_MAJOR_Version"><code class="docutils literal notranslate"><span class="pre">_cr_ReachProto_MAJOR_Version</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N28_cr_ReachProto_MAJOR_Version41cr_ReachProto_MAJOR_Version_MAJOR_VERSIONE"><code class="docutils literal notranslate"><span class="pre">_cr_ReachProto_MAJOR_Version::cr_ReachProto_MAJOR_Version_MAJOR_VERSION</span></code></a></li>
 </ul>
@@ -438,6 +441,7 @@
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_RESERVED_3E"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_RESERVED_3</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_ErrorCodes25cr_ErrorCodes_NO_RESOURCEE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_NO_RESOURCE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INVALID_IDE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_INVALID_ID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_ErrorCodes24cr_ErrorCodes_INCOMPLETEE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_INCOMPLETE</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_ErrorCodes19cr_ErrorCodes_ABORTE"><code class="docutils literal notranslate"><span class="pre">_cr_ErrorCodes::cr_ErrorCodes_ABORT</span></code></a></li>
 </ul>
 </li>
@@ -834,6 +838,8 @@
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamInfo9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::stream_id</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamInfo6accessE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::access</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamInfo4nameE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamInfo11descriptionE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamInfo8dataTypeE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamInfo::dataType</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv427_cr_DiscoverStreamsResponse"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverStreamsResponse</span></code></a><ul>
@@ -843,14 +849,13 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv414_cr_StreamOpen"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamOpen9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen::stream_id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamOpen6accessE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpen::access</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv422_cr_StreamOpenResponse"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N22_cr_StreamOpenResponse9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::stream_id</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N22_cr_StreamOpenResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::result</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N22_cr_StreamOpenResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::has_result_message</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N22_cr_StreamOpenResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamOpenResponse::result_message</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv418_cr_StreamResponse"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N18_cr_StreamResponse9stream_idE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::stream_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N18_cr_StreamResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::result</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N18_cr_StreamResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::has_result_message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N18_cr_StreamResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamResponse::result_message</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv415_cr_StreamClose"><code class="docutils literal notranslate"><span class="pre">_cr_StreamClose</span></code></a><ul>
@@ -863,6 +868,7 @@
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamData12message_dataE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::message_data</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamData12has_checksumE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::has_checksum</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamData8checksumE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::checksum</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N14_cr_StreamData8dataTypeE"><code class="docutils literal notranslate"><span class="pre">_cr_StreamData::dataType</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv420_cr_DiscoverCommands"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverCommands</span></code></a><ul>
@@ -942,7 +948,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv424_cr_DiscoverWiFiResponse"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N24_cr_DiscoverWiFiResponse13scan_is_validE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::scan_is_valid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N24_cr_DiscoverWiFiResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::result</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N24_cr_DiscoverWiFiResponse8cd_countE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::cd_count</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N24_cr_DiscoverWiFiResponse2cdE"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFiResponse::cd</span></code></a></li>
 </ul>
@@ -959,10 +965,28 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv426_cr_WiFiConnectionResponse"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse6resultE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::result</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse19has_signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_signal_strength</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse15signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::signal_strength</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse9connectedE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::connected</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse18has_result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_result_message</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse14result_messageE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::result_message</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse19has_signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::has_signal_strength</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N26_cr_WiFiConnectionResponse15signal_strengthE"><code class="docutils literal notranslate"><span class="pre">_cr_WiFiConnectionResponse::signal_strength</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv415_cr_BufferSizes"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes16max_message_sizeE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::max_message_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes20big_data_buffer_sizeE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::big_data_buffer_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes22parameter_buffer_countE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::parameter_buffer_count</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes22num_params_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_params_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes27num_descriptors_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_descriptors_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes15description_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes15max_param_bytesE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::max_param_bytes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes17medium_string_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::medium_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes16short_string_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::short_string_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes26param_info_description_lenE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::param_info_description_len</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes23num_param_notificationsE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_param_notifications</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes24num_commands_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::num_commands_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes28count_param_desc_in_responseE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::count_param_desc_in_response</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N15_cr_BufferSizes25param_notify_config_countE"><code class="docutils literal notranslate"><span class="pre">_cr_BufferSizes::param_notify_config_count</span></code></a></li>
 </ul>
 </li>
 </ul>
