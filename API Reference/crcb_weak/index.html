@@ -206,48 +206,6 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv414crcb_cli_enterPKc">
-<span id="_CPPv314crcb_cli_enterPKc"></span><span id="_CPPv214crcb_cli_enterPKc"></span><span id="crcb_cli_enter__cCP"></span><span class="target" id="group__cli__group_1ga7e8e1bb639b62e7690661cfb4ea801c0"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_cli_enter</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cli</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414crcb_cli_enterPKc" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_cli_enter </p>
-<p>When the CLI service is active, the stack can provide the device with remotely entered CLI input by calling <a class="reference internal" href="#group__cli__group_1ga7e8e1bb639b62e7690661cfb4ea801c0"><span class="std std-ref">crcb_cli_enter()</span></a>. The device must override the weak implementation to support remote access to the command line. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>cli</strong> – A string being commanded to the CLI. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success or a non-zero error preferably from the cr_ErrorCodes_ enumeration </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv421crcb_set_command_linePKc">
-<span id="_CPPv321crcb_set_command_linePKc"></span><span id="_CPPv221crcb_set_command_linePKc"></span><span id="crcb_set_command_line__cCP"></span><span class="target" id="group__cli__group_1ga320720518f4ec15a9f7f0a7e4ddd2e63"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_set_command_line</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ins</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421crcb_set_command_linePKc" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_set_command_line </p>
-<p>store the command line to be parsed elsewhere. When there are both the remote and local command lines, this set and get pair allows one set of functions to handle commands from either source. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ins</strong> – A string pointer to be retrieved by crcb_get_command_line </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>none </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv421crcb_get_command_linev">
-<span id="_CPPv321crcb_get_command_linev"></span><span id="_CPPv221crcb_get_command_linev"></span><span id="crcb_get_command_line"></span><span class="target" id="group__cli__group_1ga654bda0da3ca10d3253c16bcf657937a"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">crcb_get_command_line</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421crcb_get_command_linev" title="Link to this definition">¶</a><br /></dt>
-<dd><p>crcb_get_command_line </p>
-<p>Retrieve the command line stored with <a class="reference internal" href="#group__cli__group_1ga320720518f4ec15a9f7f0a7e4ddd2e63"><span class="std std-ref">crcb_set_command_line()</span></a>. When there are both the remote and local command lines, this set and get pair allow one set of functions to handle commands from either source. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A string pointer stored by <a class="reference internal" href="#group__cli__group_1ga320720518f4ec15a9f7f0a7e4ddd2e63"><span class="std std-ref">crcb_set_command_line()</span></a>. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv424crcb_parameter_get_countv">
 <span id="_CPPv324crcb_parameter_get_countv"></span><span id="_CPPv224crcb_parameter_get_countv"></span><span id="crcb_parameter_get_count"></span><span class="target" id="crcb__weak_8h_1a97e651388fa0411033e4b877d0de5d92"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_parameter_get_count</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424crcb_parameter_get_countv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_parameter_get_count </p>
@@ -692,9 +650,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv419crcb_access_grantedK13cr_ServiceIdsK7int32_t"><code class="docutils literal notranslate"><span class="pre">crcb_access_granted()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_configure_access_controlPK20cr_DeviceInfoRequestP21cr_DeviceInfoResponse"><code class="docutils literal notranslate"><span class="pre">crcb_configure_access_control()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_ping_get_signal_strengthP6int8_t"><code class="docutils literal notranslate"><span class="pre">crcb_ping_get_signal_strength()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv414crcb_cli_enterPKc"><code class="docutils literal notranslate"><span class="pre">crcb_cli_enter()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_set_command_linePKc"><code class="docutils literal notranslate"><span class="pre">crcb_set_command_line()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#_CPPv421crcb_get_command_linev"><code class="docutils literal notranslate"><span class="pre">crcb_get_command_line()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv424crcb_parameter_get_countv"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_get_count()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv429crcb_parameter_discover_resetK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_discover_reset()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv428crcb_parameter_discover_nextP16cr_ParameterInfo"><code class="docutils literal notranslate"><span class="pre">crcb_parameter_discover_next()</span></code></a></li>
