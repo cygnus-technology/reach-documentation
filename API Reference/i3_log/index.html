@@ -46,7 +46,7 @@
 <dt class="sig sig-object cpp" id="c.LOG_MASK_ALWAYS">
 <span class="target" id="i3__log_8h_1a4acce57b336ea13e74e65c756d9ccb52"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_ALWAYS</span></span></span><a class="headerlink" href="#c.LOG_MASK_ALWAYS" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The lowest nibble is reserved to system things. </p>
-<p>The logging system used by Reach relies on a “mask” to control the amount of logging. The “mask” concept here is chosen over the “level” concept so that masks can be assigned to specific features. Turning on all of the masks is likely to be too much information. You can turn on the logging from only the modules that you want to debug. Reach uses a few bits. You can assign your own bits. The lowest nibble is reserved to system things. Higher bits can be defined and used by the application. Cannot be supressed </p>
+<p>The logging system used by Reach relies on a “mask” to control the amount of logging. The “mask” concept here is chosen over the “level” concept so that masks can be assigned to specific features. Turning on all of the masks is likely to be too much information. You can turn on the logging from only the modules that you want to debug. Reach uses a few bits. You can assign your own bits. The lowest nibble is reserved to system things. Higher bits can be defined and used by the application in app_log_masks.h. Cannot be supressed </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -155,6 +155,222 @@
 <dd><p>A macro allowing logging to be disabled by NO_REACH_LOGGING. </p>
 </dd></dl>
 
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CSI">
+<span class="target" id="i3__log_8h_1abc85bb07f8fa1e7c2eba467b6c8e8624"></span><span class="sig-name descname"><span class="n"><span class="pre">CSI</span></span></span><a class="headerlink" href="#c.CSI" title="Link to this definition">¶</a><br /></dt>
+<dd><p>CSI - Control Sequence Introducer. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_RESET">
+<span class="target" id="i3__log_8h_1aa9a83489a78b9e4b41551699cb3c6ba1"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_RESET</span></span></span><a class="headerlink" href="#c.TEXT_RESET" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD">
+<span class="target" id="i3__log_8h_1ac6a05036dfbcc5b69c4e3f9b6bbedb2a"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD</span></span></span><a class="headerlink" href="#c.TEXT_BOLD" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BLACK">
+<span class="target" id="i3__log_8h_1ad5ffb484c291e4fe9ad9d17b58511316"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BLACK</span></span></span><a class="headerlink" href="#c.TEXT_BLACK" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_RED">
+<span class="target" id="i3__log_8h_1a555a70bc0055a01ffe22773b65592275"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_RED</span></span></span><a class="headerlink" href="#c.TEXT_RED" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_GREEN">
+<span class="target" id="i3__log_8h_1a0f72072a891489b733a5262eeda0908d"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_GREEN</span></span></span><a class="headerlink" href="#c.TEXT_GREEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_YELLOW">
+<span class="target" id="i3__log_8h_1a6e7e7b1c182f7189d6ac92f610209446"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_YELLOW</span></span></span><a class="headerlink" href="#c.TEXT_YELLOW" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BLUE">
+<span class="target" id="i3__log_8h_1a6e402ca4f48eba3f31db597c712dfa67"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BLUE</span></span></span><a class="headerlink" href="#c.TEXT_BLUE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_MAGENTA">
+<span class="target" id="i3__log_8h_1a100974b10f4902f82d998e4b463424a2"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_MAGENTA</span></span></span><a class="headerlink" href="#c.TEXT_MAGENTA" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_CYAN">
+<span class="target" id="i3__log_8h_1a07402d6cbc33a05c66021319a9557e7d"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_CYAN</span></span></span><a class="headerlink" href="#c.TEXT_CYAN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_WHITE">
+<span class="target" id="i3__log_8h_1ab092d2c9b684d6aea800b49e212a3244"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_WHITE</span></span></span><a class="headerlink" href="#c.TEXT_WHITE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_BLACK">
+<span class="target" id="i3__log_8h_1a2397242ba944b4d95a6ceb377c6bcf63"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_BLACK</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_BLACK" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_RED">
+<span class="target" id="i3__log_8h_1ae768538f6d1ccd4dc7bea49b10001be3"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_RED</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_RED" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_GREEN">
+<span class="target" id="i3__log_8h_1a81e9f4d2475c574cdb47e317cf3b3b02"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_GREEN</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_GREEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_YELLOW">
+<span class="target" id="i3__log_8h_1a6b0aaa42e212cf003e79eff7eedf83e7"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_YELLOW</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_YELLOW" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_BLUE">
+<span class="target" id="i3__log_8h_1a77286285e0b129d36b9c6ff309238aa9"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_BLUE</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_BLUE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_MAGENTA">
+<span class="target" id="i3__log_8h_1a12e77a1a246f0c54383e4877cffe41e9"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_MAGENTA</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_MAGENTA" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_CYAN">
+<span class="target" id="i3__log_8h_1ae02468cb942e2b69af271bcacf70ab5c"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_CYAN</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_CYAN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BRIGHT_WHITE">
+<span class="target" id="i3__log_8h_1a60ee2f7671486fb1e2d789819182a075"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BRIGHT_WHITE</span></span></span><a class="headerlink" href="#c.TEXT_BRIGHT_WHITE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDBLACK">
+<span class="target" id="i3__log_8h_1a633a17440c49a854225528dfc8f0e7df"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDBLACK</span></span></span><a class="headerlink" href="#c.TEXT_BOLDBLACK" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDRED">
+<span class="target" id="i3__log_8h_1a2df9a3954beadc69e5285c7b82b78fa7"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDRED</span></span></span><a class="headerlink" href="#c.TEXT_BOLDRED" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDGREEN">
+<span class="target" id="i3__log_8h_1a215ac4a1b1134974d8c8df3ce7afd197"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDGREEN</span></span></span><a class="headerlink" href="#c.TEXT_BOLDGREEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDYELLOW">
+<span class="target" id="i3__log_8h_1af60dffbd864960fd83e8c4461d51a42f"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDYELLOW</span></span></span><a class="headerlink" href="#c.TEXT_BOLDYELLOW" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDBLUE">
+<span class="target" id="i3__log_8h_1ac19954a5ea398868d9880d1f2ebdff68"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDBLUE</span></span></span><a class="headerlink" href="#c.TEXT_BOLDBLUE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDMAGENTA">
+<span class="target" id="i3__log_8h_1a296ece850b4220b34a99f21f3ee8a7d9"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDMAGENTA</span></span></span><a class="headerlink" href="#c.TEXT_BOLDMAGENTA" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDCYAN">
+<span class="target" id="i3__log_8h_1a3a61ef880fe50a66fe98caa164fc6a7c"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDCYAN</span></span></span><a class="headerlink" href="#c.TEXT_BOLDCYAN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLDWHITE">
+<span class="target" id="i3__log_8h_1a5ad9eb768827f292238d5e54eed9b28c"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLDWHITE</span></span></span><a class="headerlink" href="#c.TEXT_BOLDWHITE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_BLACK">
+<span class="target" id="i3__log_8h_1a8ba3beeb67ab2de1bd842ba36487084f"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_BLACK</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_BLACK" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_RED">
+<span class="target" id="i3__log_8h_1ab276ea1fbe6d78fbdeb5ae9edb4fd356"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_RED</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_RED" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_GREEN">
+<span class="target" id="i3__log_8h_1a57be1946567e14a59eded31b39e5d381"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_GREEN</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_GREEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_YELLOW">
+<span class="target" id="i3__log_8h_1aa2aeb90a1fe6e43f345d224d60ec4a30"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_YELLOW</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_YELLOW" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_BLUE">
+<span class="target" id="i3__log_8h_1a78c1ba14b4a255b74026eb7657c406f9"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_BLUE</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_BLUE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_MAGENTA">
+<span class="target" id="i3__log_8h_1ad92cb2ba9a12987c5c99bd49b0a8320e"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_MAGENTA</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_MAGENTA" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_CYAN">
+<span class="target" id="i3__log_8h_1ac9a8dd4d81e9f676c9bee609ffd293bb"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_CYAN</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_CYAN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.TEXT_BOLD_BRIGHT_WHITE">
+<span class="target" id="i3__log_8h_1a9334e218644fa393105d66fa961f4863"></span><span class="sig-name descname"><span class="n"><span class="pre">TEXT_BOLD_BRIGHT_WHITE</span></span></span><a class="headerlink" href="#c.TEXT_BOLD_BRIGHT_WHITE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CURSOR_UP">
+<span class="target" id="i3__log_8h_1a70efb5dccaa6fceb0309f24ca94c7a11"></span><span class="sig-name descname"><span class="n"><span class="pre">CURSOR_UP</span></span></span><a class="headerlink" href="#c.CURSOR_UP" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CURSOR_DOWN">
+<span class="target" id="i3__log_8h_1ab222bed94f6c29e3c1970935f0d6e5e5"></span><span class="sig-name descname"><span class="n"><span class="pre">CURSOR_DOWN</span></span></span><a class="headerlink" href="#c.CURSOR_DOWN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CURSOR_RIGH">
+<span class="target" id="i3__log_8h_1a444ee16ec996ac665928869d6879fdc3"></span><span class="sig-name descname"><span class="n"><span class="pre">CURSOR_RIGH</span></span></span><a class="headerlink" href="#c.CURSOR_RIGH" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CURSOR_LEFT">
+<span class="target" id="i3__log_8h_1ad76d126e649882418b8fb249283d07d4"></span><span class="sig-name descname"><span class="n"><span class="pre">CURSOR_LEFT</span></span></span><a class="headerlink" href="#c.CURSOR_LEFT" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CURSOR_HOME">
+<span class="target" id="i3__log_8h_1a023de42e0dbfbb8012cbec254f38667a"></span><span class="sig-name descname"><span class="n"><span class="pre">CURSOR_HOME</span></span></span><a class="headerlink" href="#c.CURSOR_HOME" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CLEAR_SCREEN">
+<span class="target" id="i3__log_8h_1a788be1e5263200d55dddebd3606ccad4"></span><span class="sig-name descname"><span class="n"><span class="pre">CLEAR_SCREEN</span></span></span><a class="headerlink" href="#c.CLEAR_SCREEN" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.EMPTY_LINE">
+<span class="target" id="i3__log_8h_1aef853dc31d59ec7d9c576245e989a3f2"></span><span class="sig-name descname"><span class="n"><span class="pre">EMPTY_LINE</span></span></span><a class="headerlink" href="#c.EMPTY_LINE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.CLR_TO_END">
+<span class="target" id="i3__log_8h_1a4bb0644667c8fcc632565c2d4d9c1234"></span><span class="sig-name descname"><span class="n"><span class="pre">CLR_TO_END</span></span></span><a class="headerlink" href="#c.CLR_TO_END" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
@@ -198,6 +414,47 @@
 </dd></dl>
 
 <dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426i3_log_set_ble_error_stateb">
+<span id="_CPPv326i3_log_set_ble_error_stateb"></span><span id="_CPPv226i3_log_set_ble_error_stateb"></span><span id="i3_log_set_ble_error_state__b"></span><span class="target" id="i3__log_8h_1a6803a21bff7b82eaf858483504462fb8"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_set_ble_error_state</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">errors_detected</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426i3_log_set_ble_error_stateb" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_set_ble_error_state </p>
+<p>In the event of BLE communication issues (particularly if notifications cannot be sent), making the logger aware of this means it can avoid attempting to use the BLE connection to send log messages. This makes it safe to use LOG_MASK_ERROR to log error information. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR on success. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426i3_log_get_ble_error_statev">
+<span id="_CPPv326i3_log_get_ble_error_statev"></span><span id="_CPPv226i3_log_get_ble_error_statev"></span><span id="i3_log_get_ble_error_state"></span><span class="target" id="i3__log_8h_1acecc24a0b852925430d5b5d4f0b544a9"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_get_ble_error_state</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426i3_log_get_ble_error_statev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_get_ble_error_state </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>true if a BLE error has been detected. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424i3_log_get_remote_bufferPPcP6size_t">
+<span id="_CPPv324i3_log_get_remote_bufferPPcP6size_t"></span><span id="_CPPv224i3_log_get_remote_bufferPPcP6size_t"></span><span id="i3_log_get_remote_buffer__cPP.sP"></span><span class="target" id="i3__log_8h_1ac80a5f4f46059b198715e310526527a3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_get_remote_buffer</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pRcli</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">bufSize</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424i3_log_get_remote_bufferPPcP6size_t" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_get_remote_buffer </p>
+<p>Retrieve the pointer and size of the remote buffer. Intended to be used by implementations that override the weak <a class="reference internal" href="#i3__log_8h_1adfc040fe87e98e8388c3f5758ea4e628"><span class="std std-ref">i3_log()</span></a> given here. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pRcli</strong> – pointer to char pointer of buffer. </p></li>
+<li><p><strong>pBufSize</strong> – pointer to the size of the buffer. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>zero. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv46i3_logK8uint32_tPKcz">
 <span id="_CPPv36i3_logK8uint32_tPKcz"></span><span id="_CPPv26i3_logK8uint32_tPKcz"></span><span id="i3_log__uint32_tC.cCP.z"></span><span class="target" id="i3__log_8h_1adfc040fe87e98e8388c3f5758ea4e628"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">mask</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">fmt</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46i3_logK8uint32_tPKcz" title="Link to this definition">¶</a><br /></dt>
 <dd><p>i3_log </p>
@@ -227,6 +484,45 @@
 <li><p><strong>ptr</strong> – A buffer of bytes to be displayed. </p></li>
 <li><p><strong>len</strong> – The number of bytes to be displayed.. </p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422i3_log_persistent_initv">
+<span id="_CPPv322i3_log_persistent_initv"></span><span id="_CPPv222i3_log_persistent_initv"></span><span id="i3_log_persistent_init__void"></span><span class="target" id="i3__log_8h_1a38fe66a6d5bd4740939cdbd93c597df9"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_persistent_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422i3_log_persistent_initv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_persistent_init </p>
+<p>Persistent Logging: Simple code will sprintf into a circular buffer. This buffer should persist across warm boots It can be dumped to the regular log on request.</p>
+<p>Creates a buffer that persists across warm resets. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414i3_log_persistPKcz">
+<span id="_CPPv314i3_log_persistPKcz"></span><span id="_CPPv214i3_log_persistPKcz"></span><span id="i3_log_persist__cCP.z"></span><span class="target" id="i3__log_8h_1a3c1c2b0af7137ff18ee8e1661876a402"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_persist</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">fmt</span></span>, <span class="p"><span class="pre">...</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414i3_log_persistPKcz" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_persist </p>
+<p>A printf style logging function. Has no OS dependency. Just sprintf into a buffer. The buffer is designed to persist over a (warm) reboot. The simple function should also have no OS dependency so that it can be called regardless of the state of the OS. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fmt</strong> – : standard printf format. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv423i3_log_persistent_clearv">
+<span id="_CPPv323i3_log_persistent_clearv"></span><span id="_CPPv223i3_log_persistent_clearv"></span><span id="i3_log_persistent_clear__void"></span><span class="target" id="i3__log_8h_1a2191e7673398b8ffc5261a7204e093bf"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_persistent_clear</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423i3_log_persistent_clearv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_persistent_clear </p>
+<p>Clears the persistent buffer. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422i3_log_persistent_dumpi">
+<span id="_CPPv322i3_log_persistent_dumpi"></span><span id="_CPPv222i3_log_persistent_dumpi"></span><span id="i3_log_persistent_dump__i"></span><span class="target" id="i3__log_8h_1a08d17105baa50f478ba6c25ced2a7ec6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">i3_log_persistent_dump</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lines</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422i3_log_persistent_dumpi" title="Link to this definition">¶</a><br /></dt>
+<dd><p>i3_log_persistent_dump </p>
+<p>Prints the console of the persistent buffer to the console using <a class="reference internal" href="#i3__log_8h_1adfc040fe87e98e8388c3f5758ea4e628"><span class="std std-ref">i3_log()</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lines</strong> – : If negative, dump the entire buffer. Else dump only the last N lines of the buffer. </p>
 </dd>
 </dl>
 </dd></dl>
@@ -262,8 +558,15 @@
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv415i3_log_get_maskv"><code class="docutils literal notranslate"><span class="pre">i3_log_get_mask()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv428i3_log_set_remote_cli_enableb"><code class="docutils literal notranslate"><span class="pre">i3_log_set_remote_cli_enable()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv428i3_log_get_remote_cli_enablev"><code class="docutils literal notranslate"><span class="pre">i3_log_get_remote_cli_enable()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426i3_log_set_ble_error_stateb"><code class="docutils literal notranslate"><span class="pre">i3_log_set_ble_error_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv426i3_log_get_ble_error_statev"><code class="docutils literal notranslate"><span class="pre">i3_log_get_ble_error_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv424i3_log_get_remote_bufferPPcP6size_t"><code class="docutils literal notranslate"><span class="pre">i3_log_get_remote_buffer()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv46i3_logK8uint32_tPKcz"><code class="docutils literal notranslate"><span class="pre">i3_log()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#_CPPv418i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t"><code class="docutils literal notranslate"><span class="pre">i3_log_dump_buffer()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422i3_log_persistent_initv"><code class="docutils literal notranslate"><span class="pre">i3_log_persistent_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv414i3_log_persistPKcz"><code class="docutils literal notranslate"><span class="pre">i3_log_persist()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv423i3_log_persistent_clearv"><code class="docutils literal notranslate"><span class="pre">i3_log_persistent_clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#_CPPv422i3_log_persistent_dumpi"><code class="docutils literal notranslate"><span class="pre">i3_log_persistent_dump()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reach_proto/index.html">File: reach.pb.h</a></li>
