@@ -141,7 +141,38 @@
 <li class="toctree-l2"><a class="reference internal" href="programmers_guide/Introduction.html#endpoints">Endpoints</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Porting_guide/index.html">Porting Guide</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="Porting_guide/index.html">Porting Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html">Porting Reach to a New Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#ecosystems">Ecosystems</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#silabs">SiLabs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#nordic-zephyr">Nordic/Zephyr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#microchip-harmony">Microchip Harmony</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#realtek-bw16-amebad">RealTek BW16 AmebaD</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#direct-mqtt">Direct MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#reach-overview">Reach Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#porting-steps">Porting Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#explore-the-ble-interface">1. Explore the (BLE) Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#ble">BLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#mqtt">MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#advertise-reach">2. Advertise Reach</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#id1">BLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#id2">MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#integrate-i3-log">3. Integrate i3_log()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#respond-to-get-device-info">4. Respond to Get Device Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting_guide/Porting.html#complete-the-reach-port">5. Complete the Reach Port</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#commands">Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#time">Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Porting_guide/Porting.html#remote-cli">(Remote) CLI</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API%20Reference/index.html">API Reference</a><ul>
@@ -172,7 +203,7 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv424crcb_file_discover_resetK7uint8_t"><code class="docutils literal notranslate"><span class="pre">crcb_file_discover_reset()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv423crcb_file_discover_nextP11cr_FileInfo"><code class="docutils literal notranslate"><span class="pre">crcb_file_discover_next()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv425crcb_file_get_description8uint32_tP11cr_FileInfo"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_description()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_preferred_ack_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb8uint32_t8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_file_get_preferred_ack_rate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv414crcb_read_fileK8uint32_tKiK6size_tP7uint8_tPi"><code class="docutils literal notranslate"><span class="pre">crcb_read_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv415crcb_write_fileK8uint32_tKiK6size_tPK7uint8_t"><code class="docutils literal notranslate"><span class="pre">crcb_write_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/crcb_weak/index.html#_CPPv415crcb_erase_fileK8uint32_t"><code class="docutils literal notranslate"><span class="pre">crcb_erase_file()</span></code></a></li>
@@ -227,8 +258,6 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv426i3_log_set_ble_error_stateb"><code class="docutils literal notranslate"><span class="pre">i3_log_set_ble_error_state()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv426i3_log_get_ble_error_statev"><code class="docutils literal notranslate"><span class="pre">i3_log_get_ble_error_state()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv424i3_log_get_remote_bufferPPcP6size_t"><code class="docutils literal notranslate"><span class="pre">i3_log_get_remote_buffer()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv46i3_logK8uint32_tPKcz"><code class="docutils literal notranslate"><span class="pre">i3_log()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv418i3_log_dump_bufferK8uint32_tPKcPK7uint8_tK6size_t"><code class="docutils literal notranslate"><span class="pre">i3_log_dump_buffer()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv422i3_log_persistent_initv"><code class="docutils literal notranslate"><span class="pre">i3_log_persistent_init()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv414i3_log_persistPKcz"><code class="docutils literal notranslate"><span class="pre">i3_log_persist()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/i3_log/index.html#_CPPv423i3_log_persistent_clearv"><code class="docutils literal notranslate"><span class="pre">i3_log_persistent_clear()</span></code></a></li>
@@ -313,7 +342,6 @@
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv417cr_TimeGetRequest"><code class="docutils literal notranslate"><span class="pre">cr_TimeGetRequest</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv418cr_TimeGetResponse"><code class="docutils literal notranslate"><span class="pre">cr_TimeGetResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv424cr_ConnectionDescription"><code class="docutils literal notranslate"><span class="pre">cr_ConnectionDescription</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv411cr_ScanWiFi"><code class="docutils literal notranslate"><span class="pre">cr_ScanWiFi</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv415cr_DiscoverWiFi"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverWiFi</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv423cr_DiscoverWiFiResponse"><code class="docutils literal notranslate"><span class="pre">cr_DiscoverWiFiResponse</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv424cr_WiFiConnectionRequest"><code class="docutils literal notranslate"><span class="pre">cr_WiFiConnectionRequest</span></code></a></li>
@@ -942,10 +970,6 @@
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N25_cr_ConnectionDescription3secE"><code class="docutils literal notranslate"><span class="pre">_cr_ConnectionDescription::sec</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N25_cr_ConnectionDescription8has_bandE"><code class="docutils literal notranslate"><span class="pre">_cr_ConnectionDescription::has_band</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N25_cr_ConnectionDescription4bandE"><code class="docutils literal notranslate"><span class="pre">_cr_ConnectionDescription::band</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv412_cr_ScanWiFi"><code class="docutils literal notranslate"><span class="pre">_cr_ScanWiFi</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv4N12_cr_ScanWiFi11dummy_fieldE"><code class="docutils literal notranslate"><span class="pre">_cr_ScanWiFi::dummy_field</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="API%20Reference/reach_proto/index.html#_CPPv416_cr_DiscoverWiFi"><code class="docutils literal notranslate"><span class="pre">_cr_DiscoverWiFi</span></code></a><ul>
