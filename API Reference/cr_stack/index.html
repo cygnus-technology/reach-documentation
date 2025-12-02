@@ -63,7 +63,7 @@
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv47cr_initv">
-<span id="_CPPv37cr_initv"></span><span id="_CPPv27cr_initv"></span><span id="cr_init"></span><span class="target" id="cr__stack_8h_1aa30199827c6ac809190a2494b2a66a13"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_init</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47cr_initv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv37cr_initv"></span><span id="_CPPv27cr_initv"></span><span id="cr_init__void"></span><span class="target" id="cr__stack_8h_1a829fc1269437697918695579d153a6ee"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_init</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47cr_initv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_init </p>
 <p>To be called before starting the stack. </p>
 <dl class="field-list simple">
@@ -77,7 +77,7 @@
 <dt class="sig sig-object cpp" id="_CPPv422cr_set_advertised_namePci">
 <span id="_CPPv322cr_set_advertised_namePci"></span><span id="_CPPv222cr_set_advertised_namePci"></span><span id="cr_set_advertised_name__cP.i"></span><span class="target" id="cr__stack_8h_1a16d910a820e7f9337216cd623d55e66f"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_set_advertised_name</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cr_set_advertised_namePci" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_set_advertised_name </p>
-<p>Sets the name of the device that should be advertised before connecting. Used in BLE. The length of the string is set by APP_ADVERTISED_NAME_LENGTH which can be define in the application. See reach-server.h. Uses REACH_SHORT_STRING_LEN when APP_ADVERTISED_NAME_LENGTH is not defined. The code setting up the communication link can retrieve this using <a class="reference internal" href="#cr__stack_8h_1a0455e201acdd200cfad17c663073a491"><span class="std std-ref">cr_get_advertised_name()</span></a>. </p>
+<p>Sets the name of the device that should be advertised before connecting. Used in BLE. The length of the string is set by APP_ADVERTISED_NAME_LENGTH which can be define in the application. See reach-server.h. Uses REACH_SHORT_STRING_LEN when APP_ADVERTISED_NAME_LENGTH is not defined. The code setting up the communication link can retrieve this using <a class="reference internal" href="#cr__stack_8h_1a2f90ba3f582c3eff6b7e677a1f2c9dbe"><span class="std std-ref">cr_get_advertised_name()</span></a>. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR or a non-zero error code. </p>
@@ -87,7 +87,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv422cr_get_advertised_namev">
-<span id="_CPPv322cr_get_advertised_namev"></span><span id="_CPPv222cr_get_advertised_namev"></span><span id="cr_get_advertised_name"></span><span class="target" id="cr__stack_8h_1a0455e201acdd200cfad17c663073a491"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_advertised_name</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cr_get_advertised_namev" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv322cr_get_advertised_namev"></span><span id="_CPPv222cr_get_advertised_namev"></span><span id="cr_get_advertised_name__void"></span><span class="target" id="cr__stack_8h_1a2f90ba3f582c3eff6b7e677a1f2c9dbe"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_advertised_name</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cr_get_advertised_namev" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_advertised_name </p>
 <p>Retrieves the name stored by <a class="reference internal" href="#cr__stack_8h_1a16d910a820e7f9337216cd623d55e66f"><span class="std std-ref">cr_set_advertised_name()</span></a>. </p>
 <dl class="field-list simple">
@@ -132,7 +132,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t">
-<span id="_CPPv328cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="_CPPv228cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="cr_get_coded_response_buffer__uint8_tPP.sP"></span><span class="target" id="cr__stack_8h_1ab475ae83a3ac8917b289852d0a0aa6ec"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_coded_response_buffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pResponse</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">len</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv328cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="_CPPv228cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="cr_get_coded_response_buffer__uint8_tPP.sP"></span><span class="target" id="cr__stack_8h_1ab084e3f2bc9d3199bd7af593b0d4f3e3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_coded_response_buffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ppResponse</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pLen</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_coded_response_buffer </p>
 <p>Retrieve the adress of the “coded response buffer”. This buffer contains the response to a prompt, coded according to protobuf specs, to be transmitted to the client. The stored coded length is zeroed by this call. </p>
 <dl class="field-list simple">
@@ -225,9 +225,7 @@ numSent is zeroed by each call. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>numActive</strong> – <p>is populated with the number of</p>
-<p>notifications currently enabled.a</p>
-</p></li>
+<li><p><strong>numActive</strong> – is populated with the number of notifications currently enabled.a </p></li>
 <li><p><strong>numSent</strong> – is populated with the number of notifications sent since last called.</p></li>
 </ul>
 </dd>
@@ -236,7 +234,7 @@ numSent is zeroed by each call. </p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420cr_get_current_ticksv">
-<span id="_CPPv320cr_get_current_ticksv"></span><span id="_CPPv220cr_get_current_ticksv"></span><span id="cr_get_current_ticks"></span><span class="target" id="cr__stack_8h_1ac3be80269e1e885655edb9f3bdea2e96"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_current_ticks</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_current_ticksv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv320cr_get_current_ticksv"></span><span id="_CPPv220cr_get_current_ticksv"></span><span id="cr_get_current_ticks__void"></span><span class="target" id="cr__stack_8h_1a646d67ded10a36e5377eda2974359bc3"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_current_ticks</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_current_ticksv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_current_ticks </p>
 <p>The tick count is passed in to <a class="reference internal" href="#cr__stack_8h_1ad28b6060e7d1c0641b0a6571995f656d"><span class="std std-ref">cr_process()</span></a>. This function gives other Reach functions access to that value. </p>
 <dl class="field-list simple">
@@ -248,13 +246,13 @@ numSent is zeroed by each call. </p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv413cr_test_sizesv">
-<span id="_CPPv313cr_test_sizesv"></span><span id="_CPPv213cr_test_sizesv"></span><span id="cr_test_sizes"></span><span class="target" id="cr__stack_8h_1a16ccedefa64bb122fda0990567e8499c"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_test_sizes</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413cr_test_sizesv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv313cr_test_sizesv"></span><span id="_CPPv213cr_test_sizesv"></span><span id="cr_test_sizes__void"></span><span class="target" id="cr__stack_8h_1a4f90e380720d969e396b007732a6de97"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_test_sizes</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413cr_test_sizesv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>Verify that buffer structures fit into limited size memory. </p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420cr_get_reach_versionv">
-<span id="_CPPv320cr_get_reach_versionv"></span><span id="_CPPv220cr_get_reach_versionv"></span><span id="cr_get_reach_version"></span><span class="target" id="cr__stack_8h_1ac4de55cd1a8df4e01f0dbc1fb788284f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_reach_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_reach_versionv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv320cr_get_reach_versionv"></span><span id="_CPPv220cr_get_reach_versionv"></span><span id="cr_get_reach_version__void"></span><span class="target" id="cr__stack_8h_1a60a8f08d59b240515f8d44255dc9564f"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_reach_version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_reach_versionv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_reach_version </p>
 <p>The version is in semantic version format: MAJOR.MINOR.PATCH with an optional string appended. </p>
 <dl class="field-list simple">
@@ -266,7 +264,7 @@ numSent is zeroed by each call. </p>
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420cr_get_proto_versionv">
-<span id="_CPPv320cr_get_proto_versionv"></span><span id="_CPPv220cr_get_proto_versionv"></span><span id="cr_get_proto_version"></span><span class="target" id="cr__stack_8h_1a368f0ff365c2c0e80585641773b2c1ae"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_proto_version</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_proto_versionv" title="Link to this definition">¶</a><br /></dt>
+<span id="_CPPv320cr_get_proto_versionv"></span><span id="_CPPv220cr_get_proto_versionv"></span><span id="cr_get_proto_version__void"></span><span class="target" id="cr__stack_8h_1aa877d625b70f64ddd9dc026cef422392"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_proto_version</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cr_get_proto_versionv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_proto_version </p>
 <p>The version is in semantic version format: MAJOR.MINOR.PATCH with an optional string appended. </p>
 <dl class="field-list simple">

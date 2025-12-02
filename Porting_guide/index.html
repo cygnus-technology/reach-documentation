@@ -13,7 +13,7 @@
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Reference" href="../API%20Reference/index.html" />
+    <link rel="next" title="Porting Reach to a New Chip" href="Porting.html" />
     <link rel="prev" title="Cygnus Reach Programmers Introduction" href="../programmers_guide/Introduction.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -34,8 +34,41 @@
             
   <section id="porting-guide">
 <h1>Porting Guide<a class="headerlink" href="#porting-guide" title="Link to this heading">¶</a></h1>
-<p>Welcome to the “Porting Guide” section of the documentation. Here you’ll find a step by step guide to bringing up Reach on a new platform.</p>
+<p>The porting guide describes the steps required to bring up Reach on a new platform.</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html">Porting Reach to a New Chip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#ecosystems">Ecosystems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#silabs">SiLabs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#nordic-zephyr">Nordic/Zephyr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#microchip-harmony">Microchip Harmony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#realtek-bw16-amebad">RealTek BW16 AmebaD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#direct-mqtt">Direct MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#reach-overview">Reach Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#porting-steps">Porting Steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#explore-the-ble-interface">1. Explore the (BLE) Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#ble">BLE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#mqtt">MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#advertise-reach">2. Advertise Reach</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#id1">BLE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#id2">MQTT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#integrate-i3-log">3. Integrate i3_log()</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#respond-to-get-device-info">4. Respond to Get Device Info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Porting.html#complete-the-reach-port">5. Complete the Reach Port</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#commands">Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#parameters">Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#time">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#files">Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#remote-cli">(Remote) CLI</a></li>
+</ul>
+</li>
+</ul>
 </div>
 </section>
 
@@ -59,7 +92,16 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Getting%20Started/index.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../programmers_guide/index.html">Programmer’s Guide</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Porting Guide</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Porting Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html">Porting Reach to a New Chip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#ecosystems">Ecosystems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#reach-overview">Reach Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#porting-steps">Porting Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#explore-the-ble-interface">1. Explore the (BLE) Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#advertise-reach">2. Advertise Reach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#integrate-i3-log">3. Integrate i3_log()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#respond-to-get-device-info">4. Respond to Get Device Info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Porting.html#complete-the-reach-port">5. Complete the Reach Port</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../API%20Reference/index.html">API Reference</a></li>
@@ -70,7 +112,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
       <li>Previous: <a href="../programmers_guide/Introduction.html" title="previous chapter">Cygnus Reach Programmers Introduction</a></li>
-      <li>Next: <a href="../API%20Reference/index.html" title="next chapter">API Reference</a></li>
+      <li>Next: <a href="Porting.html" title="next chapter">Porting Reach to a New Chip</a></li>
   </ul></li>
 </ul>
 </div>
