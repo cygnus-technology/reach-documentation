@@ -36,7 +36,7 @@
 <h1>File: i3_log.h<a class="headerlink" href="#file-i3-log-h" title="Link to this heading">¶</a></h1>
 <p>Contains printf style logging functions as used by the Cygnus Reach firmware stack. The log module is designed to be easily retargeted to the console IO of the target. It is designed to be easily removed for very small targets. The “mask” facility allows users to turn on and off logging on a per function basis. </p>
 <p><dl class="simple">
-<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
+<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygnus Reach firmware stack is shared under an MIT license. </p>
 </dd>
 </dl>
 </p>
@@ -46,19 +46,19 @@
 <dt class="sig sig-object cpp" id="c.LOG_MASK_ALWAYS">
 <span class="target" id="i3__log_8h_1a4acce57b336ea13e74e65c756d9ccb52"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_ALWAYS</span></span></span><a class="headerlink" href="#c.LOG_MASK_ALWAYS" title="Link to this definition">¶</a><br /></dt>
 <dd><p>The lowest nibble is reserved to system things. </p>
-<p>The logging system used by Reach relies on a “mask” to control the amount of logging. The “mask” concept here is chosen over the “level” concept so that masks can be assigned to specific features. Turning on all of the masks is likely to be too much information. You can turn on the logging from only the modules that you want to debug. Reach uses a few bits. You can assign your own bits. The lowest nibble is reserved to system things. Higher bits can be defined and used by the application in app_log_masks.h. Cannot be supressed </p>
+<p>The logging system used by Reach relies on a “mask” to control the amount of logging. The “mask” concept here is chosen over the “level” concept so that masks can be assigned to specific features. Turning on all of the masks is likely to be too much information. You can turn on the logging from only the modules that you want to debug. Reach uses a few bits. You can assign your own bits. The lowest nibble is reserved to system things. Higher bits can be defined and used by the application in app_log_masks.h. Cannot be suppressed </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_MASK_ERROR">
 <span class="target" id="i3__log_8h_1ada906a8d411f28695e5ad71e65927916"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_ERROR</span></span></span><a class="headerlink" href="#c.LOG_MASK_ERROR" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Prints red, cannot be supressed. </p>
+<dd><p>Prints red, cannot be suppressed. </p>
 </dd></dl>
 
 <dl class="cpp macro">
 <dt class="sig sig-object cpp" id="c.LOG_MASK_WARN">
 <span class="target" id="i3__log_8h_1a62e366d1bd8bc1ad623cda9ac2cff522"></span><span class="sig-name descname"><span class="n"><span class="pre">LOG_MASK_WARN</span></span></span><a class="headerlink" href="#c.LOG_MASK_WARN" title="Link to this definition">¶</a><br /></dt>
-<dd><p>Prints yellow, cannot be supressed. </p>
+<dd><p>Prints yellow, cannot be suppressed. </p>
 </dd></dl>
 
 <dl class="cpp macro">
@@ -178,7 +178,7 @@
 <dd><p>i3_log_set_remote_cli_enable </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>enable</strong> – : Enabling the remote CLI can generate significant BLE traffic. This can slow down speed related things like file transfer. Hence this API allows the remote command line to be easily supressed. The initial state can be set in reach-server.h </p>
+<dd class="field-odd"><p><strong>enable</strong> – : Enabling the remote CLI can generate significant BLE traffic. This can slow down speed related things like file transfer. Hence this API allows the remote command line to be easily suppressed. The initial state can be set in reach-server.h </p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>cr_ErrorCodes_NO_ERROR on success. </p>
