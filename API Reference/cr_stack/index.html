@@ -34,13 +34,13 @@
             
   <section id="file-cr-stack-h">
 <h1>File: cr_stack.h<a class="headerlink" href="#file-cr-stack-h" title="Link to this heading">¶</a></h1>
-<p>This file exposes the core of the public Reach stack API. It depends on reach-server.h which defines what parts of the stack are being used by an applicaiton. crcb_weak.h is incluced. That is the part of the API that must be implemented by a server application. </p>
+<p>This file exposes the core of the public Reach stack API. It depends on reach-server.h which defines what parts of the stack are being used by an application. crcb_weak.h is included. That is the part of the API that must be implemented by a server application. </p>
 <p><dl class="simple">
 <dt><strong>Author</strong></dt><dd><p>Chuck Peplinski </p>
 </dd>
 <dt><strong>Date</strong></dt><dd><p>2024-01-24 </p>
 </dd>
-<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
+<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023 i3 Product Development. All Rights Reserved. The Cygnus Reach firmware stack is shared under an MIT license. </p>
 </dd>
 </dl>
 </p>
@@ -134,7 +134,7 @@
 <dt class="sig sig-object cpp" id="_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t">
 <span id="_CPPv328cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="_CPPv228cr_get_coded_response_bufferPP7uint8_tP6size_t"></span><span id="cr_get_coded_response_buffer__uint8_tPP.sP"></span><span class="target" id="cr__stack_8h_1ab084e3f2bc9d3199bd7af593b0d4f3e3"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cr_get_coded_response_buffer</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">ppResponse</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">pLen</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cr_get_coded_response_bufferPP7uint8_tP6size_t" title="Link to this definition">¶</a><br /></dt>
 <dd><p>cr_get_coded_response_buffer </p>
-<p>Retrieve the adress of the “coded response buffer”. This buffer contains the response to a prompt, coded according to protobuf specs, to be transmitted to the client. The stored coded length is zeroed by this call. </p>
+<p>Retrieve the address of the “coded response buffer”. This buffer contains the response to a prompt, coded according to protobuf specs, to be transmitted to the client. The stored coded length is zeroed by this call. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

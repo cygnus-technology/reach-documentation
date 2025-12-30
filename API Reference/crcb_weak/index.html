@@ -40,7 +40,7 @@
 </dd>
 <dt><strong>Date</strong></dt><dd><p>2024-02-21 </p>
 </dd>
-<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023-2024 i3 Product Development. All Rights Reserved. The Cygngus Reach firmware stack is shared under an MIT license. </p>
+<dt><strong>Copyright</strong></dt><dd><p>(c) Copyright 2023-2024 i3 Product Development. All Rights Reserved. The Cygnus Reach firmware stack is shared under an MIT license. </p>
 </dd>
 </dl>
 </p>
@@ -291,7 +291,7 @@
 <dt class="sig sig-object cpp" id="_CPPv419crcb_parameter_readK8uint32_tP17cr_ParameterValue">
 <span id="_CPPv319crcb_parameter_readK8uint32_tP17cr_ParameterValue"></span><span id="_CPPv219crcb_parameter_readK8uint32_tP17cr_ParameterValue"></span><span id="crcb_parameter_read__uint32_tC.cr_ParameterValueP"></span><span class="target" id="crcb__weak_8h_1a6333f6a97231b1920c546472f8c37881"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_parameter_read</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pid</span></span>, <a class="reference internal" href="../reach_proto/index.html#_CPPv417cr_ParameterValue" title="cr_ParameterValue"><span class="n"><span class="pre">cr_ParameterValue</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419crcb_parameter_readK8uint32_tP17cr_ParameterValue" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_parameter_read </p>
-<p>The overriding implementation allows the stack to access the parameter repository of the device. The parameter descripion of this pid specifying the size and type of the data is known both by the app and the stack. </p>
+<p>The overriding implementation allows the stack to access the parameter repository of the device. The parameter description of this pid specifying the size and type of the data is known both by the app and the stack. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -309,7 +309,7 @@
 <dt class="sig sig-object cpp" id="_CPPv420crcb_parameter_writeK8uint32_tPK17cr_ParameterValue">
 <span id="_CPPv320crcb_parameter_writeK8uint32_tPK17cr_ParameterValue"></span><span id="_CPPv220crcb_parameter_writeK8uint32_tPK17cr_ParameterValue"></span><span id="crcb_parameter_write__uint32_tC.cr_ParameterValueCP"></span><span class="target" id="crcb__weak_8h_1ade6a06525e3bb13dd0f175a5c4d6f475"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_parameter_write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pid</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="../reach_proto/index.html#_CPPv417cr_ParameterValue" title="cr_ParameterValue"><span class="n"><span class="pre">cr_ParameterValue</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420crcb_parameter_writeK8uint32_tPK17cr_ParameterValue" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_parameter_write </p>
-<p>The overriding implementation allows the stack to access the parameter repository of the device. The parameter descripion of this pid specifying the size and type of the data is known both by the app and the stack. </p>
+<p>The overriding implementation allows the stack to access the parameter repository of the device. The parameter description of this pid specifying the size and type of the data is known both by the app and the stack. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -327,7 +327,7 @@
 <dt class="sig sig-object cpp" id="_CPPv427crcb_compute_parameter_hashv">
 <span id="_CPPv327crcb_compute_parameter_hashv"></span><span id="_CPPv227crcb_compute_parameter_hashv"></span><span id="crcb_compute_parameter_hash__void"></span><span class="target" id="crcb__weak_8h_1ac17afb5351aed7dd8134eafbaee5c456"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_compute_parameter_hash</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427crcb_compute_parameter_hashv" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_compute_parameter_hash </p>
-<p>The overriding implementation is to compute a number that will change if the table of parmeter descriptions is changed. This allows the client to cache a large table of parameter descriptions. into the devices parameter repository. </p>
+<p>The overriding implementation is to compute a number that will change if the table of parameter descriptions is changed. This allows the client to cache a large table of parameter descriptions. into the devices parameter repository. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>cr_ErrorCodes_NO_ERROR on success or an error from the cr_ErrorCodes_ enumeration. </p>
@@ -476,12 +476,12 @@
 <dt class="sig sig-object cpp" id="_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb8uint32_t8uint32_t">
 <span id="_CPPv332crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb8uint32_t8uint32_t"></span><span id="_CPPv232crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb8uint32_t8uint32_t"></span><span id="crcb_file_get_preferred_ack_rate__uint32_t.uint32_t.b.uint32_t.uint32_t"></span><span class="target" id="crcb__weak_8h_1a39ded96ee306088fa16182cfc7ea7243"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">crcb_file_get_preferred_ack_rate</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fid</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">requested_rate</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">is_write</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">transfer_length</span></span>, <span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">timeout_ms</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432crcb_file_get_preferred_ack_rate8uint32_t8uint32_tb8uint32_t8uint32_t" title="Link to this definition">¶</a><br /></dt>
 <dd><p>crcb_file_get_preferred_ack_rate </p>
-<p>If the device has a preferred acknowledge rate it can implement this function to advise the file transfer code of the rate. Higher ack rates mean less acknowlegements and faster file trasnfer. </p>
+<p>If the device has a preferred acknowledge rate it can implement this function to advise the file transfer code of the rate. Higher ack rates mean less acknowledgements and faster file transfer. </p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fid</strong> – : File ID, in case this affects the decision </p></li>
-<li><p><strong>requested_rate</strong> – might factor into the decison. </p></li>
+<li><p><strong>requested_rate</strong> – might factor into the decision. </p></li>
 <li><p><strong>is_write</strong> – true if enquiring about write. </p></li>
 <li><p><strong>transfer_length</strong> – The length of the transfer that is being requested. </p></li>
 <li><p><strong>timeout_ms</strong> – The time in milliseconds before the transfer times out. </p></li>
